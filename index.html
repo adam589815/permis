@@ -194,6 +194,12 @@
   0% { transform: translateX(-100%); }
   100% { transform: translateX(120vw); }
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/></head>
 <body>
@@ -202,6 +208,47 @@
 <p>Passe ton permis en toute simplicité. Synthèse claire &amp; simulateur complet.</p>
 <a class="cta" href="#services" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' }); return false;">Voir nos services</a>
 </header>
+
+<section style="padding: 60px 20px; background-color: #fff; text-align: center;">
+  <h2 style="
+    color: #f9b233;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #f9b233, 0 0 25px #ffd75a;
+    letter-spacing: 1px;
+    animation: fadeIn 1.5s ease-in-out;
+  ">Présentation</h2>
+  <div style="display: flex; justify-content: center;">
+    <video controls playsinline style="width: 360px; height: 640px; border-radius: 16px; box-shadow: 0 0 30px #ffd75a; animation: fadeIn 2s ease-in-out;">
+      <source src="permisfacile.mp4" type="video/mp4" />
+      Votre navigateur ne prend pas en charge la lecture vidéo.
+    </video>
+  </div>
+  <div style="margin-top: 40px; animation: fadeIn 2.5s ease-in-out;">
+    <p style="font-size: 1.3rem; color: #111; max-width: 700px; margin: 0 auto 10px;">
+      Tu veux <strong>réussir ton permis B du premier coup</strong> ?<br/>
+      Découvre notre synthèse ultra claire et notre simulateur réaliste.
+    </p>
+    <div style="font-size: 3rem; margin: 20px 0; color: #f9b233; text-shadow: 0 0 10px #f9b233;">
+      ↓
+    </div>
+    <a href="#services" style="
+      font-size: 1.2rem;
+      background-color: #f9b233;
+      color: #111;
+      padding: 12px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 20px #ffd75a;
+      transition: all 0.3s ease-in-out;
+      display: inline-block;
+    " onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' }); return false;">
+      En savoir plus
+    </a>
+  </div>
+</section>
+
 <section id="services">
 <h2>Nos Services</h2>
 <div class="produits">
