@@ -201,53 +201,51 @@
 }
 
 </style>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/></head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<style>
+@keyframes fadeSlide {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.promo-animated {
+    animation: fadeSlide 1.5s ease-out;
+}
+</style>
+
+</head>
 <body>
 <header><div style="position:absolute; top:20px; left:0; animation:drive 6s linear infinite; font-size: 2rem;"><i class="fas fa-car-side" style="color: #facc15; font-size: 2.5rem; filter: drop-shadow(0 0 5px #facc15);"></i></div>
 <h1>PermisFacile.be</h1>
 <p>Passe ton permis en toute simplicité. Synthèse claire &amp; simulateur complet.</p>
 <a class="cta" href="#services" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' }); return false;">Voir nos services</a>
 </header>
-
-<section style="padding: 60px 20px; background-color: #fff; text-align: center;">
-  <h2 style="
-    color: #f9b233;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    text-shadow: 0 0 10px #f9b233, 0 0 25px #ffd75a;
-    letter-spacing: 1px;
-    animation: fadeIn 1.5s ease-in-out;
-  ">Présentation</h2>
-  <div style="display: flex; justify-content: center;">
-    <video controls playsinline style="width: 360px; height: 640px; border-radius: 16px; box-shadow: 0 0 30px #ffd75a; animation: fadeIn 2s ease-in-out;">
-      <source src="permisfacile.mp4" type="video/mp4" />
-      Votre navigateur ne prend pas en charge la lecture vidéo.
-    </video>
-  </div>
-  <div style="margin-top: 40px; animation: fadeIn 2.5s ease-in-out;">
-    <p style="font-size: 1.3rem; color: #111; max-width: 700px; margin: 0 auto 10px;">
-      Tu veux <strong>réussir ton permis B du premier coup</strong> ?<br/>
-      Découvre notre synthèse ultra claire et notre simulateur réaliste.
-    </p>
-    <div style="font-size: 3rem; margin: 20px 0; color: #f9b233; text-shadow: 0 0 10px #f9b233;">
-      ↓
+<section style="text-align:center; padding: 60px 20px; background-color: #ffffff; font-family: 'Poppins', sans-serif;">
+    <h2 style="color: #FFC107; font-size: 3em; font-weight: 600; margin-bottom: 40px;">Présentation</h2>
+    <div style="display: flex; justify-content: center;">
+        <iframe width="100%" height="540" src="https://www.youtube.com/embed/ACF5MK_aX9E"
+            title="Présentation PermisFacile.be" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen style="max-width: 960px; border-radius: 20px; box-shadow: 0 0 40px rgba(255, 200, 0, 0.6);">
+        </iframe>
     </div>
-    <a href="#services" style="
-      font-size: 1.2rem;
-      background-color: #f9b233;
-      color: #111;
-      padding: 12px 28px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 20px #ffd75a;
-      transition: all 0.3s ease-in-out;
-      display: inline-block;
-    " onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' }); return false;">
-      En savoir plus
-    </a>
-  </div>
+    <p style="font-size: 1.3em; color: #333; margin-top: 30px;">
+        Tu veux <strong>réussir ton permis B du premier coup</strong> ?<br>
+        Découvre notre synthèse ultra claire et notre simulateur réaliste.
+    </p>
 </section>
+
+<section class="promo-animated" style="font-family: 'Poppins', sans-serif; padding: 40px 20px; text-align: center; background-color: #fff9db;">
+    <h2 style="font-size: 2em; color: #FFC107; margin-bottom: 15px;">Offre Spéciale Été 2025</h2>
+    <p style="font-size: 1.2em; color: #333; max-width: 800px; margin: auto;">
+        Pour profiter de la <strong>réduction de -50%</strong>, tu dois impérativement entrer le code <strong style="color: #FFC107;">ETE2025</strong> lors du paiement Stripe.
+        <br>Offre valable jusqu’au <strong>1er septembre 2025</strong>.
+    </p>
+</section>
+
+
+
+
+
 
 <section id="services">
 <h2>Nos Services</h2>
@@ -260,7 +258,7 @@
 <li>Tout est expliqué simplement, sans termes compliqués</li>
 <li>Gain de temps assuré, fini les gros manuels inutiles</li>
 </ul>
-<div class="prix" style="margin: 0 auto; display: flex; justify-content: center; align-items: center;">20€</div>
+<div class="prix" style="margin: 0 auto; display: flex; justify-content: center; align-items: center;"><span style='text-decoration: line-through; color: red;'>20€</span> 10€</div>
 <a class="cta" href="https://buy.stripe.com/6oE6qYb0H0ypcCs288" style="display: flex; justify-content: center; margin-top: 10px;">Acheter</a>
 </div>
 <div class="card">
@@ -271,7 +269,7 @@
 <li>Avec des conseils concrets pour éviter de refaire les mêmes erreurs</li>
 <li>Mises à jour régulières pour rester à jour avec les examens officiels</li>
 </ul>
-<div class="prix" style="margin: 0 auto; display: flex; justify-content: center; align-items: center;">50€</div>
+<div class="prix" style="margin: 0 auto; display: flex; justify-content: center; align-items: center;"><span style='text-decoration: line-through; color: red;'>50€</span> 25€</div>
 <a class="cta" href="https://buy.stripe.com/eVa5mU4Cjdlb5a05kl" style="display: flex; justify-content: center; margin-top: 10px;">Acheter</a>
 </div>
 </div>
@@ -302,6 +300,23 @@
 </section>
 <footer>
     © 2025 PermisFacile.be – Tous droits réservés
-  </footer>
+  
+<section style="font-family: 'Poppins', sans-serif; padding: 60px 20px; text-align: center; background-color: #fff9db;">
+    <h2 style="font-size: 2.5em; color: #FFC107; margin-bottom: 20px;">☀️ Offre Spéciale Été 2025</h2>
+    <p style="font-size: 1.3em; color: #333;">
+        Utilise le code <strong style="color: #FFC107;">ETE2025</strong> à la caisse pour obtenir <strong>-50%</strong> sur la synthèse et le logiciel.
+        <br>Offre valable jusqu’au <strong>1er septembre 2025</strong>. Ne rate pas cette opportunité !
+    </p>
+</section>
+
+
+<section style="font-family: 'Poppins', sans-serif; padding: 40px 20px; text-align: center; background-color: #fff8e1;">
+    <p style="font-size: 1.1em; color: #333;">
+        ❓ Une question ou un souci avec ton achat ? Contacte notre support à :
+        <a href="mailto:permisfacilebe@gmail.com" style="color: #FFC107; font-weight: bold;">permisfacilebe@gmail.com</a>
+    </p>
+</section>
+
+</footer>
 </body>
 </html>
