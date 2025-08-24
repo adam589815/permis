@@ -1,322 +1,439 @@
-
 <!DOCTYPE html>
-
 <html lang="fr">
-<head>
-<meta charset="utf-8"/>
-<title>PermisFacile.be – Services Premium</title>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet"/>
-<script crossorigin="anonymous" src="https://kit.fontawesome.com/a076d05399.js"></script>
-<style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
-      color: #111;
-    }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PermisFacile.be — Réussis ton permis en toute confiance</title>
+    <meta name="description" content="Synthèse PDF claire du code de la route (30 pages) et simulateur d'examen réaliste. Paiement sécurisé Stripe, téléchargement immédiat, support réactif." />
 
-    header {
-      background: linear-gradient(to right, #f9b233, #ffd75a);
-      color: #111;
-      padding: 60px 20px 80px;
-      text-align: center;
-      position: relative;
-    }
+    <!-- OpenGraph -->
+    <meta property="og:title" content="PermisFacile.be — Réussis ton permis en toute confiance" />
+    <meta property="og:description" content="Synthèse PDF claire (30 pages) + logiciel simulateur d'examen. -50% avec le code ETE2025 jusqu'au 1er septembre 2025." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.permisfacile.be" />
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f9b233' d='M10 36h44l-3 12H13z'/%3E%3Cpath fill='%23111' d='M52 28H12l4-8h32z'/%3E%3Ccircle cx='20' cy='48' r='6' fill='%23111'/%3E%3Ccircle cx='44' cy='48' r='6' fill='%23111'/%3E%3C/svg%3E" />
 
-    header p {
-      font-size: 1.2rem;
-    }
+    <style>
+      :root{
+        --brand:#f9b233; /* jaune */
+        --brand-2:#ffd75a; /* jaune clair */
+        --bg:#ffffff;
+        --text:#111111;
+        --muted:#666;
+        --card:#fafafa;
+        --stroke:#f6c76a;
+        --ok:#10b981;
+      }
+      *{box-sizing:border-box}
+      html,body{margin:0;padding:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
+      a{color:inherit;text-decoration:none}
+      img{max-width:100%;display:block}
 
-    .cta {
-      margin-top: 25px;
-      padding: 12px 28px;
-      background: #111;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
+      /* Header / nav */
+      .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:50}
+      .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+      .brand-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#111;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+      .nav{display:flex;gap:18px}
+      .nav a{font-weight:600}
+      .cta{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;border:0;border-radius:12px;padding:12px 18px;font-weight:600;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease}
+      .cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
 
-    .cta:hover {
-      background: #333;
-    }
+      /* Hero */
+      header.hero{background:linear-gradient(90deg,var(--brand) 0%, var(--brand-2) 100%);padding:64px 20px 56px;text-align:center;position:relative;overflow:hidden}
+      header.hero h1{font-size:clamp(28px,3.6vw,48px);line-height:1.1;margin:0 0 14px}
+      header.hero p{font-size:clamp(16px,2.2vw,20px);color:#222;margin:0 0 22px}
+      .badges{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:18px}
+      .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#111;border-radius:999px;padding:10px 16px;font-size:14px;font-weight:700;border:1px solid var(--stroke);box-shadow:0 8px 24px rgba(0,0,0,.08), inset 0 0 0 2px rgba(255,215,90,.15);transition:transform .15s, box-shadow .2s}
+      .badge i{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#111}
+      .badge:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,0,0,.12)}
 
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 70px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #00000033;
-    }
+      /* Section shell */
+      section{padding:64px 20px}
+      .container{max-width:1100px;margin:0 auto}
+      .section-title{font-size:clamp(24px,3vw,34px);margin:0 0 22px}
+      .muted{color:var(--muted)}
+      .grid{display:grid;gap:22px}
+      @media(min-width:900px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+      @media(min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
 
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+      /* Card */
+      .card{background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:22px;box-shadow:0 8px 30px rgba(0,0,0,.05);transition:transform .2s ease, box-shadow .3s ease}
+      .card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.10)}
+      .price{display:inline-flex;gap:10px;align-items:center;background:var(--brand);color:#111;font-weight:700;border-radius:10px;padding:8px 12px;box-shadow:0 0 0 4px #fff inset, 0 8px 24px rgba(250,200,50,.35)}
+      .price small{color:#b91c1c;text-decoration:line-through;font-weight:600}
 
-    .produits {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
+      /* Video */
+      .video-wrap{border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15)}
 
-    .card {
-      background-color: #f9f9f9;
-      border: 2px solid #f9b233;
-      padding: 30px;
-      border-radius: 12px;
-      width: 320px;
-      transition: transform 0.4s, box-shadow 0.4s;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      position: relative;
-      text-align: left;
-    }
+      /* Offer ribbon */
+      .offer{background:#fff9db;border:1px dashed var(--stroke);padding:16px;border-radius:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
+      /* Steps */
+      .steps{counter-reset:step}
+      .step{display:flex;gap:14px}
+      .step-number{counter-increment:step;width:36px;height:36px;border-radius:10px;background:#111;color:#fff;display:grid;place-items:center;font-weight:700}
+      .step-number::after{content:counter(step)}
 
-    .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+      /* FAQ */
+      details{border:1px solid #eee;border-radius:12px;padding:16px;background:#fff}
+      details+details{margin-top:12px}
+      summary{font-weight:600;cursor:pointer}
 
-    .icon-yellow {
-      color: #f9b233;
-      font-size: 1.4em;
-      filter: drop-shadow(0 0 6px #f9b233);
-    }
+      /* Footer */
+      footer{background:#111;color:#ddd}
+      footer .cols{display:grid;gap:18px;padding:34px 20px}
+      @media(min-width:900px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+      footer a{color:#fff;text-decoration:underline}
+      .sub{border-top:1px solid #2a2a2a;padding:16px 20px;font-size:14px;color:#aaa}
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
+      /* Subtle animation */
+      .float{animation:float 6s ease-in-out infinite}
+      @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
 
-    ul li {
-      margin-bottom: 10px;
-      padding-left: 24px;
-      position: relative;
-      color: #333;
-    }
+      /* ===== Car scene animations (hero) ===== */
+      .scene{position:relative;max-width:940px;margin:34px auto 0;height:160px}
+      .road{position:absolute;inset:auto 0 0 0;height:56px;background:#1a1a1a;border-radius:12px;box-shadow:inset 0 2px 0 rgba(255,255,255,.04),inset 0 -8px 0 #0d0d0d}
+      .road::before{content:"";position:absolute;left:0;right:0;top:50%;height:6px;background:repeating-linear-gradient(90deg,#fff 0 80px,transparent 80px 140px);transform:translateY(-50%);opacity:.85;animation:moveRoad 3s linear infinite}
+      .car{position:absolute;left:50%;bottom:38px;width:260px;transform:translateX(-50%);filter:drop-shadow(0 18px 22px rgba(0,0,0,.25));animation:bob 2.8s ease-in-out infinite}
+      .car svg{display:block;width:100%;height:auto}
+      .wheel{transform-box:fill-box;transform-origin:50% 50%;animation:rotateWheel 1s linear infinite}
+      @keyframes moveRoad{from{background-position-x:0}to{background-position-x:-220px}}
+      @keyframes rotateWheel{to{transform:rotate(360deg)}}
+      @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-6px)}}
+          .cta-light{background:#fff;color:#111;border:1px solid var(--stroke);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+      .cta-light:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(0,0,0,.12)}
+      .price{font-size:16px}
+      .price .amount{font-size:18px;font-weight:700}
+      /* buyzone */
+      .buyzone{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:8px}
+      .price{font-size:15px}
+      .price small{font-size:14px}
+      .price .amount{font-size:19px;line-height:1;font-weight:800}
+      .feature{padding-left:4px;list-style:disc inside;font-size:15px;line-height:1.45}
+      /* overrides: hide road */
+      .road{display:none!important}
+      /* neutral list bullets */
+      .li-check{display:flex;align-items:flex-start;gap:10px}
+      .li-icon{flex:0 0 auto;width:8px;height:8px;border-radius:999px;background:#111;margin-top:10px}
+      .features{display:grid;gap:10px;margin:0 0 12px 0;padding:0;list-style:none}
+      /* services cards */
+      #services .card{border:2px solid var(--stroke);padding:28px;}
+      #services h3{font-size:20px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+      #services ul.features{margin-bottom:18px}
+      #services .price{background:var(--brand);padding:10px 14px;border-radius:8px;display:inline-block;font-weight:700;}
+      #services .price small{color:#b91c1c;text-decoration:line-through;margin-right:6px;font-size:15px}
+      #services .price .amount{font-size:18px;font-weight:800}
+      #services .buyzone{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:12px}
+      #services .cta{width:100%;justify-content:center}
 
-    ul li::before {
-      content: "✔️";
-      position: absolute;
-      left: 0;
-      color: #f9b233;
-      font-size: 1.1rem;
-      filter: drop-shadow(0 0 4px #f9b233);
-    }
-
-    .prix {
-      font-size: 1.5rem;
-      color: #fff;
-      background: #f9b233;
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 8px;
-      margin: 12px 0;
-      font-weight: bold;
-      box-shadow: 0 0 15px #ffd75a;
-    }
-
-    .avis-section {
-      background: #f4f4f4;
-      padding: 60px 20px;
-    }
-
-    .avis-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .avis-card {
-      background: #fff;
-      border: 2px solid #ffd75a;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: left;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    .avis-card p {
-      margin: 0 0 8px;
-    }
-
-    .pourquoi {
-      background: #fffaf3;
-      padding: 60px 20px;
-      border-top: 2px solid #f9b233;
-      border-bottom: 2px solid #f9b233;
-    }
-
-    .pourquoi h2 {
-      font-size: 2rem;
-      color: #f9b233;
-      margin-bottom: 20px;
-    }
-
-    .pourquoi p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.2rem;
-      color: #333;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 10px;
-      background-color: #111;
-      color: #ccc;
-      font-size: 1rem;
-    }
-  
-@keyframes drive {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(120vw); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+      /* ===== Services section (match mock) ===== */
+      #services .grid.cols-2{gap:28px}
+      .service-card{background:#fff;border:2px solid var(--stroke);border-radius:14px;padding:28px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+      .service-title{display:flex;align-items:center;gap:12px;margin:0 0 10px}
+      .service-title .hicon{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;
+        background:linear-gradient(135deg,var(--brand-2),var(--brand));color:#111;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+      .features{list-style:none;margin:0 0 18px 0;padding:0;display:grid;gap:12px}
+      .feature{display:flex;gap:10px;align-items:flex-start}
+      .feature .tick{flex:0 0 auto;width:18px;height:18px;border-radius:999px;background:#10b981;display:grid;place-items:center;margin-top:3px;
+        box-shadow:inset 0 -2px 0 rgba(0,0,0,.1)}
+      .feature .tick svg{width:12px;height:12px;fill:#fff;display:block}
+      .price-pill{background:linear-gradient(0deg,var(--brand) 0%, var(--brand-2) 100%);border:0;border-radius:11px;padding:12px 16px;
+        text-align:center;font-weight:800;letter-spacing:.2px;box-shadow:0 12px 28px rgba(250,200,50,.35), 0 0 0 1px rgba(0,0,0,.05) inset;margin:4px 0 12px}
+      .price-pill .old{color:#d61f1f;text-decoration:line-through;font-weight:800;margin-right:8px}
+      .price-pill .new{font-size:20px}
+      .buyzone{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:8px}
 
 </style>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-<style>
-@keyframes fadeSlide {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-.promo-animated {
-    animation: fadeSlide 1.5s ease-out;
-}
-</style>
-
-</head>
-<body>
-<header><div style="position:absolute; top:20px; left:0; animation:drive 6s linear infinite; font-size: 2rem;"><i class="fas fa-car-side" style="color: #facc15; font-size: 2.5rem; filter: drop-shadow(0 0 5px #facc15);"></i></div>
-<h1>PermisFacile.be</h1>
-<p>Passe ton permis en toute simplicité. Synthèse claire &amp; simulateur complet.</p>
-<a class="cta" href="#services" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' }); return false;">Voir nos services</a>
-</header>
-<section style="text-align:center; padding: 60px 20px; background-color: #ffffff; font-family: 'Poppins', sans-serif;">
-    <h2 style="color: #FFC107; font-size: 3em; font-weight: 600; margin-bottom: 40px;">Présentation</h2>
-    <div style="display: flex; justify-content: center;">
-        <iframe width="100%" height="540" src="https://www.youtube.com/embed/ACF5MK_aX9E"
-            title="Présentation PermisFacile.be" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen style="max-width: 960px; border-radius: 20px; box-shadow: 0 0 40px rgba(255, 200, 0, 0.6);">
-        </iframe>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  </head>
+  <body>
+    <!-- Top navigation -->
+    <div class="topbar">
+      <div class="brand">
+        <a href="#" aria-label="PermisFacile.be — accueil">PermisFacile.be</a>
+      </div>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#comment">Comment ça marche</a>
+        <a href="#faq">FAQ</a>
+        <a class="cta" href="#services"><i class="fa-solid fa-lock"></i> Acheter</a>
+      </nav>
     </div>
-    <p style="font-size: 1.3em; color: #333; margin-top: 30px;">
-        Tu veux <strong>réussir ton permis B du premier coup</strong> ?<br>
-        Découvre notre synthèse ultra claire et notre simulateur réaliste.
-    </p>
-</section>
 
-<section class="promo-animated" style="font-family: 'Poppins', sans-serif; padding: 40px 20px; text-align: center; background-color: #fff9db;">
-    <h2 style="font-size: 2em; color: #FFC107; margin-bottom: 15px;">Offre Spéciale Été 2025</h2>
-    <p style="font-size: 1.2em; color: #333; max-width: 800px; margin: auto;">
-        Pour profiter de la <strong>réduction de -50%</strong>, tu dois impérativement entrer le code <strong style="color: #FFC107;">ETE2025</strong> lors du paiement Stripe.
-        <br>Offre valable jusqu’au <strong>1er septembre 2025</strong>.
-    </p>
-</section>
+    <!-- Hero -->
+    <header class="hero">
+      <div class="container">
+        <h1>Réussis ton permis théorique<br>simplement et en toute confiance</h1>
+        <p>La <strong>synthèse PDF</strong> (30 pages) et le <strong>simulateur d'examen</strong> qui vont droit à l'essentiel.
+          Paiement sécurisé via Stripe & téléchargement immédiat.</p>
+        
 
+        <div style="margin-top:16px">
+          <a class="cta" href="#services">Voir nos services</a>
+        </div>
 
+        
+        <div class="scene" aria-hidden="true">
+          
+          <div class="car">
+            <svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Voiture qui roule">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                  <stop offset="0" stop-color="#ffd75a"/>
+                  <stop offset="1" stop-color="#f9b233"/>
+                </linearGradient>
+              </defs>
+              <!-- Car body -->
+              <path d="M40 140h300c12 0 24-8 28-20l10-28c3-10 12-18 22-20l26-6c8-2 14 2 14 10v46c0 10-8 18-18 18H40z" fill="url(#g1)" stroke="#111" stroke-width="4"/>
+              <!-- Windows -->
+              <path d="M96 104h96l26-30h-88z" fill="#eaf4ff" stroke="#111" stroke-width="4"/>
+              <path d="M226 104h76l10-30h-60z" fill="#eaf4ff" stroke="#111" stroke-width="4"/>
+              <!-- Lights -->
+              <circle cx="360" cy="128" r="8" fill="#fff2b2" stroke="#111" stroke-width="3"/>
+              <circle cx="52"  cy="128" r="7" fill="#ffe08a" stroke="#111" stroke-width="3"/>
+              <!-- Wheels -->
+              <g class="wheel">
+                <circle cx="128" cy="160" r="30" fill="#222" stroke="#111" stroke-width="6"/>
+                <circle cx="128" cy="160" r="14" fill="#444"/>
+                <rect x="126" y="132" width="4" height="56" fill="#777"/>
+              </g>
+              <g class="wheel">
+                <circle cx="312" cy="160" r="30" fill="#222" stroke="#111" stroke-width="6"/>
+                <circle cx="312" cy="160" r="14" fill="#444"/>
+                <rect x="310" y="132" width="4" height="56" fill="#777"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
 
+    <!-- Promo / vidéo -->
+    <section aria-labelledby="titre-video">
+      <div class="container grid cols-2">
+        <div>
+          <h2 id="titre-video" class="section-title">Découvre en 60 secondes</h2>
+          <p class="muted">Présentation rapide de la méthode et de l'interface de simulation.</p>
+          <div class="video-wrap" role="region" aria-label="Vidéo de présentation">
+            <iframe width="100%" height="340" src="https://www.youtube.com/embed/ACF5MK_aX9E"
+              title="Présentation PermisFacile.be" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <div>
+          <div class="offer" aria-live="polite">
+            <i class="fa-solid fa-ticket"></i>
+            <strong>Offre spéciale été 2025 : -50%</strong>
+            <span>Utilise le code <strong>ETE2025</strong> au paiement Stripe.</span>
+            <span class="muted">Valable jusqu'au <strong>1er septembre 2025</strong>.</span>
+          </div>
+          <ul class="grid" style="margin-top:18px">
+            <li class="card"> Contenu clair, sans jargon inutile</li>
+            <li class="card"> Simulations proches de l'examen</li>
+            <li class="card"> Focus sur les fautes éliminatoires</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
+    <!-- Services / Produits -->
+    <section id="services" aria-labelledby="titre-services">
+      <div class="container">
+        <h2 id="titre-services" class="section-title">Nos services</h2>
+        <div class="grid cols-2">
+          <article class="service-card" aria-labelledby="prod1">
+            <h3 id="prod1" class="service-title"><span class="hicon"><i class="fa-solid fa-book"></i></span> Synthèse Permis B</h3>
+            <ul class="features">
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>30 pages claires et efficaces</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Les fautes graves bien signalées pour éviter les erreurs éliminatoires</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Tout est expliqué simplement, sans termes compliqués</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Gain de temps assuré, fini les gros manuels inutiles</span></li>
+                          <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Téléchargement instantané</span></li>
+            </ul>
+            <div class="buyzone">
+              <div class="price-pill"><span class="old">20€</span><span class="new">10€</span></div>
+              <a id="acheter" class="cta" href="https://buy.stripe.com/6oE6qYb0H0ypcCs288">Acheter</a>
+            </div>
+          </article>
 
+          <article class="service-card" aria-labelledby="prod2">
+            <h3 id="prod2" class="service-title"><span class="hicon"><i class="fa-solid fa-gears"></i></span> Logiciel d\'examen</h3>
+            <ul class="features">
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Contient les questions types des examens pour les permis AM, B, C, D</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Inclus des simulateurs d’examen réalistes</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Avec des conseils concrets pour éviter de refaire les mêmes erreurs</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Mises à jour régulières pour rester à jour avec les examens officiels</span></li>
+                          <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Téléchargement instantané</span></li>
+            </ul>
+            <div class="buyzone">
+              <div class="price-pill"><span class="old">50€</span><span class="new">25€</span></div>
+              <a class="cta" href="https://buy.stripe.com/eVa5mU4Cjdlb5a05kl">Acheter</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section id="services">
-<h2>Nos Services</h2>
-<div class="produits">
-<div class="card">
-<h3><i class="fas fa-book icon-yellow"></i> Synthèse Permis B</h3>
-<ul>
-<li>30 pages claires et efficaces</li>
-<li>Les fautes graves bien signalées pour éviter les erreurs éliminatoires</li>
-<li>Tout est expliqué simplement, sans termes compliqués</li>
-<li>Gain de temps assuré, fini les gros manuels inutiles</li>
-</ul>
-<div class="prix" style="margin: 0 auto; display: flex; justify-content: center; align-items: center;"><span style='text-decoration: line-through; color: red;'>20€</span> 10€</div>
-<a class="cta" href="https://buy.stripe.com/6oE6qYb0H0ypcCs288" style="display: flex; justify-content: center; margin-top: 10px;">Acheter</a>
-</div>
-<div class="card">
-<h3><i class="fas fa-cogs icon-yellow"></i> Logiciel d'examen</h3>
-<ul>
-<li>Contient les questions types des examens pour les permis AM, B, C, D</li>
-<li>Inclus des simulateurs d’examen réalistes</li>
-<li>Avec des conseils concrets pour éviter de refaire les mêmes erreurs</li>
-<li>Mises à jour régulières pour rester à jour avec les examens officiels</li>
-</ul>
-<div class="prix" style="margin: 0 auto; display: flex; justify-content: center; align-items: center;"><span style='text-decoration: line-through; color: red;'>50€</span> 25€</div>
-<a class="cta" href="https://buy.stripe.com/eVa5mU4Cjdlb5a05kl" style="display: flex; justify-content: center; margin-top: 10px;">Acheter</a>
-</div>
-</div>
-</section>
-<section class="pourquoi">
-<h2>Pourquoi nous ?</h2>
-<p>Nous sommes les seuls à vous fournir l'essentiel pour réussir votre permis théorique rapidement et efficacement. Évitez les gros manuels inutiles et concentrez-vous sur ce qui compte vraiment !</p>
-</section>
-<section class="avis-section">
-<h2>Avis clients</h2>
-<div class="avis-grid">
-<div class="avis-card">
-<p>⭐ ⭐ ⭐ ⭐ ⭐</p>
-<p>"J’ai retrouvé le même genre de questions à l'examen grâce au logiciel. Merci !"</p>
-<strong>— Karim</strong>
-</div>
-<div class="avis-card">
-<p>⭐ ⭐ ⭐ ⭐ ⭐</p>
-<p>"La synthèse m’a fait gagner beaucoup de temps. Cela évite les gros manuels !"</p>
-<strong>— Julie</strong>
-</div>
-<div class="avis-card">
-<p>⭐ ⭐ ⭐ ⭐ ⭐</p>
-<p>"Claire, simple et efficace. J’ai tout retenu en 2 soirées grâce à la synthèse !"</p>
-<strong>— Lina</strong>
-</div>
-</div>
-</section>
-<footer>
-    © 2025 PermisFacile.be – Tous droits réservés
+    <!-- Comment ça marche -->
+    <section id="comment" aria-labelledby="titre-steps" style="background:#fffaf3;border-block:1px solid var(--stroke)">
+      <div class="container">
+        <h2 id="titre-steps" class="section-title">Comment ça marche ?</h2>
+        <div class="grid">
+          <div class="step card">
+            <div class="step-number"></div>
+            <div>
+              <strong>Achète en ligne</strong>
+              <p class="muted">Paiement sécurisé par Stripe en quelques secondes.</p>
+            </div>
+          </div>
+          <div class="step card">
+            <div class="step-number"></div>
+            <div>
+              <strong>Télécharge & installe</strong>
+              <p class="muted">Accès immédiat aux fichiers et au simulateur.</p>
+            </div>
+          </div>
+          <div class="step card">
+            <div class="step-number"></div>
+            <div>
+              <strong>Entraîne-toi efficacement</strong>
+              <p class="muted">Révise l'essentiel et habitue-toi au format d'examen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (social proof raisonné au lieu d'avis) -->
+    <section id="faq" aria-labelledby="titre-faq">
+      <div class="container">
+        <h2 id="titre-faq" class="section-title">FAQ</h2>
+        <details>
+          <summary>Le paiement est-il vraiment sécurisé ?</summary>
+          <p>Oui. Le paiement est traité par Stripe, un prestataire de paiement reconnu. Nous ne stockons aucune donnée bancaire sur le site.</p>
+        </details>
+        <details>
+          <summary>Quand recevrai-je mes fichiers ?</summary>
+          <p>Immédiatement après paiement : un lien de téléchargement s'affiche et un e‑mail de confirmation est envoyé.</p>
+        </details>
+        <details>
+          <summary>Les contenus sont-ils à jour ?</summary>
+          <p>Nous effectuons des mises à jour régulières du simulateur et de la synthèse lorsque c'est nécessaire.</p>
+        </details>
+        <details>
+          <summary>Comment vous contacter ?</summary>
+          <p>Par e‑mail à <a href="mailto:permisfacilebe@gmail.com">permisfacilebe@gmail.com</a>. Nous répondons généralement sous 24h ouvrées.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Bande confiance -->
+    <section aria-label="Garantie et conformité" style="padding-top:0">
+      <div class="container card" role="note">
+        <p style="margin:0"><i class="fa-solid fa-circle-info"></i> 
+          <strong>Transparence :</strong> pas d'abonnement ni de frais cachés. TVA incluse si applicable. 
+          <strong>Besoin d'aide ?</strong> Écris-nous : <a href="mailto:permisfacilebe@gmail.com">permisfacilebe@gmail.com</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container cols">
+        <div>
+          <h4>PermisFacile.be</h4>
+          <p class="muted">Outils simples et efficaces pour réussir ton permis théorique.</p>
+          <div class="badges" style="justify-content:flex-start">
+            <span class="badge"><i class="fa-solid fa-lock"></i> Stripe</span>
+            <span class="badge"><i class="fa-solid fa-cloud-arrow-down"></i> Accès immédiat</span>
+          </div>
+        </div>
+        <div>
+          <h4>Aide</h4>
+          <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="mailto:permisfacilebe@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Légal</h4>
+          <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+            <li><a href="#" aria-disabled="true">Mentions légales</a></li>
+            <li><a href="#" aria-disabled="true">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sub">© 2025 PermisFacile.be — Tous droits réservés</div>
+    </footer>
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question","name": "Le paiement est-il vraiment sécurisé ?","acceptedAnswer": {"@type": "Answer","text": "Oui, le paiement est traité par Stripe. Aucune donnée bancaire n'est stockée sur notre site."}},
+        {"@type": "Question","name": "Quand recevrai-je mes fichiers ?","acceptedAnswer": {"@type": "Answer","text": "Immédiatement après paiement via un lien de téléchargement et un e‑mail de confirmation."}},
+        {"@type": "Question","name": "Les contenus sont-ils à jour ?","acceptedAnswer": {"@type": "Answer","text": "Nous effectuons des mises à jour régulières si nécessaire."}},
+        {"@type": "Question","name": "Comment vous contacter ?","acceptedAnswer": {"@type": "Answer","text": "Par e‑mail à permisfacilebe@gmail.com. Réponse sous 24h ouvrées en général."}}
+      ]
+    }
+    </script>
+
+    <!-- Accessibilité : réduit les animations si demandé par l'utilisateur -->
+    <script>
+      const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (media.matches) {
+        document.querySelectorAll('.wheel').forEach(w=>w.style.animation='none');
+        const road = document.querySelector('.road');
+        if (road) road.style.animation='none';
+      }
+    </script>
   
-<section style="font-family: 'Poppins', sans-serif; padding: 60px 20px; text-align: center; background-color: #fff9db;">
-    <h2 style="font-size: 2.5em; color: #FFC107; margin-bottom: 20px;">☀️ Offre Spéciale Été 2025</h2>
-    <p style="font-size: 1.3em; color: #333;">
-        Utilise le code <strong style="color: #FFC107;">ETE2025</strong> à la caisse pour obtenir <strong>-50%</strong> sur la synthèse et le logiciel.
-        <br>Offre valable jusqu’au <strong>1er septembre 2025</strong>. Ne rate pas cette opportunité !
-    </p>
-</section>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const id = a.getAttribute('href');
+          if(id.length > 1){
+            const target = document.querySelector(id);
+            if(target){
+              e.preventDefault();
+              target.scrollIntoView({behavior: 'smooth', block: 'start'});
+            }
+          }
+        });
+      });
+    </script>
+    
+<script>
+  // Smooth scroll + visual cue
+  (function(){
+    function slideCue(el){
+      var box = el.querySelector('.container') || el;
+      box.classList.remove('section-enter');
+      void box.offsetWidth;
+      box.classList.add('section-enter');
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var id = a.getAttribute('href');
+        if(id && id.length > 1){
+          var target = document.querySelector(id);
+          if(target){
+            e.preventDefault();
+            target.scrollIntoView({behavior:'smooth', block:'start'});
+            slideCue(target);
+          }
+        }
+      });
+    });
+  })();
+</script>
 
-
-<section style="font-family: 'Poppins', sans-serif; padding: 40px 20px; text-align: center; background-color: #fff8e1;">
-    <p style="font-size: 1.1em; color: #333;">
-        ❓ Une question ou un souci avec ton achat ? Contacte notre support à :
-        <a href="mailto:permisfacilebe@gmail.com" style="color: #FFC107; font-weight: bold;">permisfacilebe@gmail.com</a>
-    </p>
-</section>
-
-</footer>
 </body>
 </html>
