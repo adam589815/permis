@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PermisFacile.be — Réussis ton permis en toute confiance</title>
@@ -147,9 +147,74 @@
       .price-pill .new{font-size:20px}
       .buyzone{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:8px}
 
+
+/* ===== Ultra Promo flash styles ===== */
+.flash-pack{position:relative;overflow:hidden;border:3px solid #111;background:#fff;box-shadow:0 16px 60px rgba(0,0,0,.18)}
+.flash-pack::before{
+  content:"⚡ ULTRA PROMO"; position:absolute; top:14px; right:-48px; transform:rotate(15deg);
+  background:linear-gradient(135deg,#fff 0%, var(--brand) 60%, var(--brand-2) 100%);
+  color:#111; font-weight:900; letter-spacing:.6px; padding:8px 48px; border:2px solid #111; border-radius:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+.flash-glow{animation:flashGlow 1.4s ease-in-out infinite}
+@keyframes flashGlow{
+  0%,100%{box-shadow:0 0 0 0 rgba(249,178,51,.0), 0 14px 40px rgba(0,0,0,.10)}
+  50%{box-shadow:0 0 0 12px rgba(249,178,51,.15), 0 18px 54px rgba(0,0,0,.16)}
+}
+.pop{animation:pop .28s ease-out}
+@keyframes pop{from{transform:scale(.96)}to{transform:scale(1)}}
+
+.pricing-note{font-size:13px;color:#555;margin-top:-6px}
+.badge-best{display:inline-flex;align-items:center;gap:6px;background:#111;color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
+.badge-best i{background:#fff;color:#111;width:18px;height:18px;border-radius:999px;display:grid;place-items:center}
+
+.cta-major{background:#111;color:#fff;border-radius:14px;padding:14px 18px;font-weight:800;display:inline-flex;gap:10px;align-items:center}
+        
+/* ===== Pack Ultra: star treatment ===== */
+.pack-hero{
+  position:relative;
+  background: linear-gradient(180deg, rgba(255,239,186,.7), rgba(255,250,230,.9));
+  border:3px solid #111;
+  transform: scale(1.02);
+  box-shadow: 0 20px 70px rgba(0,0,0,.20);
+}
+@media (min-width: 900px){
+  .pack-hero{ transform: scale(1.06); }
+}
+.pack-hero .service-title{
+  display:flex; align-items:center; gap:10px;
+}
+.pack-hero .service-title .bolt{
+  display:inline-flex; width:28px; height:28px; border-radius:8px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:#111; align-items:center; justify-content:center; font-weight:900;
+  border:2px solid #111;
+}
+.badge-best{
+  display:inline-flex; gap:8px; align-items:center;
+  background: #ffcc00;
+  color:#111; border:2px solid #111; border-radius:999px; padding:6px 12px; font-weight:900;
+}
+.badge-best i{}
+
+.pulse{ animation: promoPulse 1.6s ease-in-out infinite; }
+@keyframes promoPulse{
+  0%{ box-shadow:0 0 0 0 rgba(255,204,0,.0) }
+  50%{ box-shadow:0 0 0 14px rgba(255,204,0,.22) }
+  100%{ box-shadow:0 0 0 0 rgba(255,204,0,.0) }
+}
+.cta-pack{
+  background: linear-gradient(135deg, #ffe066, #ffbf00);
+  color:#111; border:2px solid #111; border-radius:14px; font-weight:900;
+}
+.cta-pack i{ margin-right:8px;}
+.trust-note{ display:block; margin-top:8px; font-size:13px; color:#333; font-weight:700 }
 </style>
+        
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   </head>
+  <body>
+
   <body>
     <!-- Top navigation -->
     <div class="topbar">
@@ -212,13 +277,15 @@
       </div>
     </header>
 
+    
+
     <!-- Promo / vidéo -->
     <section aria-labelledby="titre-video">
       <div class="container grid cols-2">
         <div>
           <h2 id="titre-video" class="section-title">Découvre en 60 secondes</h2>
           <p class="muted">Présentation rapide de la méthode et de l'interface de simulation.</p>
-          <div class="video-wrap" role="region" aria-label="Vidéo de présentation">
+          <div class="video-wrap">
             <iframe width="100%" height="340" src="https://www.youtube.com/embed/ACF5MK_aX9E"
               title="Présentation PermisFacile.be" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -226,60 +293,83 @@
           </div>
         </div>
         <div>
-          <div class="offer" aria-live="polite">
-            <i class="fa-solid fa-ticket"></i>
-            <strong>Offre spéciale été 2025 : -50%</strong>
-            <span>Utilise le code <strong>ETE2025</strong> au paiement Stripe.</span>
-            <span class="muted">Valable jusqu'au <strong>12 septembre 2025</strong>.</span>
+          <div class="offer flash-glow" style="border-width:2px">
+            <i class="fa-solid fa-bolt"></i>
+            <strong>ULTRA PROMO : Pack complet 29,99€</strong>
+            <span>Synthèse <b>+ Logiciel</b> — au lieu de <b>39,98€</b>.</span>
+            <span class="muted">Meilleure offre : prépare-toi à l'examen pour moins de 30€.</span>
           </div>
           <ul class="grid" style="margin-top:18px">
             <li class="card"> Contenu clair et efficace</li>
             <li class="card"> Simulations proches de l'examen</li>
             <li class="card"> Focus sur les fautes éliminatoires</li>
           </ul>
+          <div style="margin-top:16px">
+            <a class="cta-major" href="#services"><i class="fa-solid fa-fire"></i>Profiter du pack 29,99€</a>
+          </div>
         </div>
       </div>
     </section>
+
 
     <!-- Services / Produits -->
     <section id="services" aria-labelledby="titre-services">
       <div class="container">
-        <h2 id="titre-services" class="section-title">Nos services</h2>
+        <h2 id="titre-services" class="section-title">Nos offres</h2>
+        <p class="pricing-note">Achète séparément si tu veux, mais le pack est <strong>imbattable</strong> 👇</p>
         <div class="grid cols-2">
-          <article class="service-card" aria-labelledby="prod1">
+          <article class="service-card pop" aria-labelledby="prod1">
             <h3 id="prod1" class="service-title"><span class="hicon"><i class="fa-solid fa-book"></i></span> Synthèse Permis B</h3>
             <ul class="features">
               <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>30 pages claires et efficaces</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Les fautes graves bien signalées pour éviter les erreurs éliminatoires</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Tout est expliqué simplement, sans termes compliqués</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Gain de temps assuré, fini les gros manuels inutiles</span></li>
-                          <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Téléchargement instantané</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Fautes éliminatoires bien signalées</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Explications simples, sans jargon</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Téléchargement instantané</span></li>
             </ul>
             <div class="buyzone">
-              <div class="price-pill"><span class="old">20€</span><span class="new">10€</span></div>
-              <a id="acheter" class="cta" href="https://buy.stripe.com/6oE6qYb0H0ypcCs288">Acheter maintenant</a>
+              <div class="price-pill"><span class="new">14,99€</span></div>
+              <a id="btn-synthese" class="cta cta-light" href="https://buy.stripe.com/fZu5kDdVTgS41k39bp7Zu06"><i class="fa-solid fa-lock"></i>Acheter la synthèse</a>
             </div>
           </article>
 
-          <article class="service-card" aria-labelledby="prod2">
+          <article class="service-card pop" aria-labelledby="prod2">
             <h3 id="prod2" class="service-title"><span class="hicon"><i class="fa-solid fa-gears"></i></span> Logiciel d'examen</h3>
             <ul class="features">
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Contient les questions types des examens pour les permis AM, B, C, D</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Inclus des simulateurs d’examen réalistes</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Avec des conseils concrets pour éviter de refaire les mêmes erreurs</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Mises à jour régulières pour rester à jour avec les examens officiels</span></li>
-                          <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Téléchargement instantané</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Questions types AM, B, C, D</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Simulateurs réalistes, corrections guidées</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Mises à jour régulières</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Téléchargement instantané</span></li>
             </ul>
             <div class="buyzone">
-              <div class="price-pill"><span class="old">50€</span><span class="new">25€</span></div>
-              <a class="cta" href="https://buy.stripe.com/eVa5mU4Cjdlb5a05kl">Acheter maintenant</a>
+              <div class="price-pill"><span class="new">24,99€</span></div>
+              <a id="btn-logiciel" class="cta cta-light" href="https://buy.stripe.com/cNifZh9FDbxK1k34V97Zu07"><i class="fa-solid fa-lock"></i>Acheter le logiciel</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid" style="margin-top:24px">
+          <article class="service-card flash-pack flash-glow pack-hero" style="position:relative" aria-labelledby="prod-pack">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
+              <h3 id="prod-pack" class="service-title" style="margin:0"><span class="bolt">⚡</span><span class="hicon"><i class="fa-solid fa-fire"></i></span> Pack Synthèse + Logiciel</h3>
+              
+            </div>
+            <ul class="features">
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Accès immédiat aux deux produits</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Économise <strong>9,99€</strong> vs achat séparé (39,98€)</span></li>
+              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Parfait pour réussir vite et bien</span></li>
+            </ul>
+            <div class="buyzone">
+              <div class="price-pill"><span class="old">39,98€</span><span class="new">29,99€</span></div>
+              <a id="btn-pack" class="cta cta-pack pulse" href="https://buy.stripe.com/9B63cv19745i6En9bp7Zu08"><i class="fa-solid fa-bolt"></i>Prendre le Pack 29,99€</a>
+              <small class="muted" style="margin-top:-4px">Paiement sécurisé Stripe — téléchargement immédiat<span class="trust-note">⚡ 80% des élèves choisissent ce pack</span></small>
+              <div class="badge-best" style="position:absolute; bottom:12px; right:12px;"><i class="fa-solid fa-star"></i> Le plus vendu</div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Comment ça marche -->
+<!-- Comment ça marche -->
     <section id="comment" aria-labelledby="titre-steps" style="background:#fffaf3;border-block:1px solid var(--stroke)">
       <div class="container">
         <h2 id="titre-steps" class="section-title">Comment ça marche ?</h2>
@@ -434,6 +524,9 @@
     });
   })();
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
