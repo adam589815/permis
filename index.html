@@ -1,23 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PermisFacile.be — Réussis ton permis en toute confiance</title>
-    <meta name="description" content="Synthèse PDF claire du code de la route (30 pages) et simulateur d'examen réaliste. Paiement sécurisé Stripe, téléchargement immédiat, support réactif." />
-
-    <!-- OpenGraph -->
-    <meta property="og:title" content="PermisFacile.be — Réussis ton permis en toute confiance" />
-    <meta property="og:description" content="Synthèse PDF claire (30 pages) + logiciel simulateur d'examen. -50% avec le code ETE2025 jusqu'au 1er septembre 2025." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.permisfacile.be" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f9b233' d='M10 36h44l-3 12H13z'/%3E%3Cpath fill='%23111' d='M52 28H12l4-8h32z'/%3E%3Ccircle cx='20' cy='48' r='6' fill='%23111'/%3E%3Ccircle cx='44' cy='48' r='6' fill='%23111'/%3E%3C/svg%3E" />
-
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>PermisFacile.be — Réussis ton permis en toute confiance</title>
+<meta content="Synthèse PDF claire du code de la route (30 pages) et simulateur d'examen réaliste. Paiement sécurisé Stripe, téléchargement immédiat, support réactif." name="description"/>
+<!-- OpenGraph -->
+<meta content="PermisFacile.be — Réussis ton permis en toute confiance" property="og:title"/>
+<meta content="Synthèse PDF claire (30 pages) + logiciel simulateur d'examen. -50% avec le code ETE2025 jusqu'au 1er septembre 2025." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.permisfacile.be" property="og:url"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f9b233' d='M10 36h44l-3 12H13z'/%3E%3Cpath fill='%23111' d='M52 28H12l4-8h32z'/%3E%3Ccircle cx='20' cy='48' r='6' fill='%23111'/%3E%3Ccircle cx='44' cy='48' r='6' fill='%23111'/%3E%3C/svg%3E" rel="icon"/>
+<style>
       :root{
         --brand:#f9b233; /* jaune */
         --brand-2:#ffd75a; /* jaune clair */
@@ -210,259 +208,298 @@
 .cta-pack i{ margin-right:8px;}
 .trust-note{ display:block; margin-top:8px; font-size:13px; color:#333; font-weight:700 }
 </style>
-        
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  </head>
-  <body>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<style>
+/* Promo memo: same size as other cards, subtle glow */
+.service-card.promo{position:relative;box-shadow:0 10px 30px rgba(249,178,51,.20)}
+.service-card.promo::after{
+  content:"🔥 -50% cette semaine";
+  position:absolute; top:14px; right:14px;
+  background:linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:#111; border:2px solid #111; border-radius:999px;
+  font-weight:900; font-size:11px; padding:6px 10px; letter-spacing:.2px;
+}
+.service-card.promo:hover{box-shadow:0 14px 40px rgba(249,178,51,.32)}
+</style><style>
+/* Keep badge away from the title */
+.service-card.promo .service-title{padding-right:130px}
+.service-card.promo{position:relative}
+/* Refine badge size/placement */
+.service-card.promo::after{
+  top:10px !important;
+  right:10px !important;
+  font-size:11px !important;
+  padding:5px 9px !important;
+  line-height:1 !important;
+  border-width:1px !important;
+}
+</style><style>
+/* Aligner prix + bouton en bas des cartes */
+#services .grid,
+#services .grid.cols-3 { align-items: stretch; }
+#services .service-card { display:flex; flex-direction:column; }
+#services .service-card .buyzone { margin-top:auto; }
+</style><style>
+/* Badge promo discret et espacé du titre */
+.service-card.promo{position:relative}
+.service-card.promo .service-title{padding-right:130px}
+.service-card.promo::after{
+  content:"🔥 -50% cette semaine";
+  position:absolute; top:10px; right:10px;
+  background:linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:#111; border:1px solid #111; border-radius:999px;
+  font-weight:800; font-size:11px; padding:5px 9px; line-height:1;
+}
+</style></head>
+<body>
+<body>
+<!-- Top navigation -->
+<div class="topbar">
+<div class="brand">
+<a aria-label="PermisFacile.be — accueil" href="#">PermisFacile.be</a>
+</div>
+<nav class="nav">
+<a href="#services">Services</a>
+<a href="#comment">Comment ça marche</a>
+<a href="#faq">FAQ</a>
+<a class="cta" href="#services"><i class="fa-solid fa-lock"></i>Acheter maintenant</a>
+</nav>
+</div>
+<!-- Hero -->
+<header class="hero">
+<div class="container">
+<h1>Réussis ton permis théorique<br/>simplement et en toute confiance</h1>
+<p>La <strong>synthèse PDF</strong> (30 pages) et le <strong>simulateur d'examen</strong> vont droit à l'essentiel.
+          Paiement sécurisé via Stripe &amp; téléchargement immédiat.</p>
+<div style="margin-top:16px">
+<a class="cta" href="#services">Voir nos services</a>
+</div>
+<div aria-hidden="true" class="scene">
+<div class="car">
+<svg aria-label="Voiture qui roule" role="img" viewbox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="g1" x1="0" x2="1">
+<stop offset="0" stop-color="#ffd75a"></stop>
+<stop offset="1" stop-color="#f9b233"></stop>
+</lineargradient>
+</defs>
+<!-- Car body -->
+<path d="M40 140h300c12 0 24-8 28-20l10-28c3-10 12-18 22-20l26-6c8-2 14 2 14 10v46c0 10-8 18-18 18H40z" fill="url(#g1)" stroke="#111" stroke-width="4"></path>
+<!-- Windows -->
+<path d="M96 104h96l26-30h-88z" fill="#eaf4ff" stroke="#111" stroke-width="4"></path>
+<path d="M226 104h76l10-30h-60z" fill="#eaf4ff" stroke="#111" stroke-width="4"></path>
+<!-- Lights -->
+<circle cx="360" cy="128" fill="#fff2b2" r="8" stroke="#111" stroke-width="3"></circle>
+<circle cx="52" cy="128" fill="#ffe08a" r="7" stroke="#111" stroke-width="3"></circle>
+<!-- Wheels -->
+<g class="wheel">
+<circle cx="128" cy="160" fill="#222" r="30" stroke="#111" stroke-width="6"></circle>
+<circle cx="128" cy="160" fill="#444" r="14"></circle>
+<rect fill="#777" height="56" width="4" x="126" y="132"></rect>
+</g>
+<g class="wheel">
+<circle cx="312" cy="160" fill="#222" r="30" stroke="#111" stroke-width="6"></circle>
+<circle cx="312" cy="160" fill="#444" r="14"></circle>
+<rect fill="#777" height="56" width="4" x="310" y="132"></rect>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</header>
+<!-- Promo / vidéo -->
+<section aria-labelledby="titre-video">
+<div class="container grid cols-2">
+<div>
+<h2 class="section-title" id="titre-video">Découvre en 60 secondes</h2>
+<p class="muted">Présentation rapide de la méthode et de l'interface de simulation.</p>
+<div class="video-wrap">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="340" src="https://www.youtube.com/embed/ACF5MK_aX9E" title="Présentation PermisFacile.be" width="100%"></iframe>
+</div>
+</div>
+<div>
+<div class="offer flash-glow" style="border-width:2px">
+<i class="fa-solid fa-bolt"></i>
+<strong>ULTRA PROMO : Pack complet 29,99€</strong>
+<span>Synthèse <b>+ Logiciel</b> — au lieu de <b>40€</b>.</span>
+<span class="muted">Meilleure offre : prépare-toi à l'examen pour moins de 30€.</span>
+</div>
+<ul class="grid" style="margin-top:18px">
+<li class="card"> Contenu clair et efficace</li>
+<li class="card"> Simulations proches de l'examen</li>
+<li class="card"> Focus sur les fautes éliminatoires</li>
+</ul>
+<div style="margin-top:16px">
+<a class="cta-major" href="#services"><i class="fa-solid fa-fire"></i>Profiter du pack 29,99€</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Services / Produits -->
+<section aria-labelledby="titre-services" id="services">
+<div class="container">
+<h2 class="section-title" id="titre-services">Nos offres</h2>
+<p class="pricing-note">Achète séparément si tu veux, mais le pack est <strong>imbattable</strong> 👇</p>
+<div class="grid cols-3">
+<article aria-labelledby="prod3" class="service-card pop promo">
+<h3 class="service-title" id="prod3">
+<span class="hicon"><i class="fa-solid fa-lightbulb"></i></span> Synthèse Express
+  </h3>
+<ul class="features">
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Résumé ultra efficace de 10 pages</span></li>
+<li class="feature">
+<span class="tick">
+<svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg>
+</span>
+<span>Fautes éliminatoires bien signalées</span>
+</li>
 
-  <body>
-    <!-- Top navigation -->
-    <div class="topbar">
-      <div class="brand">
-        <a href="#" aria-label="PermisFacile.be — accueil">PermisFacile.be</a>
-      </div>
-      <nav class="nav">
-        <a href="#services">Services</a>
-        <a href="#comment">Comment ça marche</a>
-        <a href="#faq">FAQ</a>
-        <a class="cta" href="#services"><i class="fa-solid fa-lock"></i>Acheter maintenant</a>
-      </nav>
-    </div>
-
-    <!-- Hero -->
-    <header class="hero">
-      <div class="container">
-        <h1>Réussis ton permis théorique<br>simplement et en toute confiance</h1>
-        <p>La <strong>synthèse PDF</strong> (30 pages) et le <strong>simulateur d'examen</strong> vont droit à l'essentiel.
-          Paiement sécurisé via Stripe & téléchargement immédiat.</p>
-        
-
-        <div style="margin-top:16px">
-          <a class="cta" href="#services">Voir nos services</a>
-        </div>
-
-        
-        <div class="scene" aria-hidden="true">
-          
-          <div class="car">
-            <svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Voiture qui roule">
-              <defs>
-                <linearGradient id="g1" x1="0" x2="1">
-                  <stop offset="0" stop-color="#ffd75a"/>
-                  <stop offset="1" stop-color="#f9b233"/>
-                </linearGradient>
-              </defs>
-              <!-- Car body -->
-              <path d="M40 140h300c12 0 24-8 28-20l10-28c3-10 12-18 22-20l26-6c8-2 14 2 14 10v46c0 10-8 18-18 18H40z" fill="url(#g1)" stroke="#111" stroke-width="4"/>
-              <!-- Windows -->
-              <path d="M96 104h96l26-30h-88z" fill="#eaf4ff" stroke="#111" stroke-width="4"/>
-              <path d="M226 104h76l10-30h-60z" fill="#eaf4ff" stroke="#111" stroke-width="4"/>
-              <!-- Lights -->
-              <circle cx="360" cy="128" r="8" fill="#fff2b2" stroke="#111" stroke-width="3"/>
-              <circle cx="52"  cy="128" r="7" fill="#ffe08a" stroke="#111" stroke-width="3"/>
-              <!-- Wheels -->
-              <g class="wheel">
-                <circle cx="128" cy="160" r="30" fill="#222" stroke="#111" stroke-width="6"/>
-                <circle cx="128" cy="160" r="14" fill="#444"/>
-                <rect x="126" y="132" width="4" height="56" fill="#777"/>
-              </g>
-              <g class="wheel">
-                <circle cx="312" cy="160" r="30" fill="#222" stroke="#111" stroke-width="6"/>
-                <circle cx="312" cy="160" r="14" fill="#444"/>
-                <rect x="310" y="132" width="4" height="56" fill="#777"/>
-              </g>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    
-
-    <!-- Promo / vidéo -->
-    <section aria-labelledby="titre-video">
-      <div class="container grid cols-2">
-        <div>
-          <h2 id="titre-video" class="section-title">Découvre en 60 secondes</h2>
-          <p class="muted">Présentation rapide de la méthode et de l'interface de simulation.</p>
-          <div class="video-wrap">
-            <iframe width="100%" height="340" src="https://www.youtube.com/embed/ACF5MK_aX9E"
-              title="Présentation PermisFacile.be" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-        </div>
-        <div>
-          <div class="offer flash-glow" style="border-width:2px">
-            <i class="fa-solid fa-bolt"></i>
-            <strong>ULTRA PROMO : Pack complet 29,99€</strong>
-            <span>Synthèse <b>+ Logiciel</b> — au lieu de <b>40€</b>.</span>
-            <span class="muted">Meilleure offre : prépare-toi à l'examen pour moins de 30€.</span>
-          </div>
-          <ul class="grid" style="margin-top:18px">
-            <li class="card"> Contenu clair et efficace</li>
-            <li class="card"> Simulations proches de l'examen</li>
-            <li class="card"> Focus sur les fautes éliminatoires</li>
-          </ul>
-          <div style="margin-top:16px">
-            <a class="cta-major" href="#services"><i class="fa-solid fa-fire"></i>Profiter du pack 29,99€</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Services / Produits -->
-    <section id="services" aria-labelledby="titre-services">
-      <div class="container">
-        <h2 id="titre-services" class="section-title">Nos offres</h2>
-        <p class="pricing-note">Achète séparément si tu veux, mais le pack est <strong>imbattable</strong> 👇</p>
-        <div class="grid cols-2">
-          <article class="service-card pop" aria-labelledby="prod1">
-            <h3 id="prod1" class="service-title"><span class="hicon"><i class="fa-solid fa-book"></i></span> Synthèse Permis B</h3>
-            <ul class="features">
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>30 pages claires et efficaces</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Fautes éliminatoires bien signalées</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Explications rapide et simple</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Téléchargement instantané a durée illimité</span></li>
-            </ul>
-            <div class="buyzone">
-              <div class="price-pill"><span class="new">14,99€</span></div>
-              <a id="btn-synthese" class="cta cta-light" href="https://buy.stripe.com/fZu5kDdVTgS41k39bp7Zu06"><i class="fa-solid fa-lock"></i>Acheter la synthèse</a>
-            </div>
-          </article>
-
-          <article class="service-card pop" aria-labelledby="prod2">
-            <h3 id="prod2" class="service-title"><span class="hicon"><i class="fa-solid fa-gears"></i></span> Logiciel d'examen</h3>
-            <ul class="features">
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Questions types AM, B, C, D</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Simulateurs réalistes, corrections guidées</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Mises à jour régulières</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Téléchargement instantané a durée illimité</span></li>
-            </ul>
-            <div class="buyzone">
-              <div class="price-pill"><span class="new">24,99€</span></div>
-              <a id="btn-logiciel" class="cta cta-light" href="https://buy.stripe.com/cNifZh9FDbxK1k34V97Zu07"><i class="fa-solid fa-lock"></i>Acheter le logiciel</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="grid" style="margin-top:24px">
-          <article class="service-card flash-pack flash-glow pack-hero" style="position:relative" aria-labelledby="prod-pack">
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
-              <h3 id="prod-pack" class="service-title" style="margin:0"><span class="bolt">⚡</span><span class="hicon"><i class="fa-solid fa-fire"></i></span> Pack Synthèse + Logiciel</h3>
-              
-            </div>
-            <ul class="features">
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Accès a la synthèse claire et efficace</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Logiciel <strong>complet </strong> avec les mêmes questions et les mêmes images qu'a l'examen</span></li>
-              <li class="feature"><span class="tick"><svg viewBox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"/></svg></span><span>Téléchargement instantané a durée illimité</span></li>
-            </ul>
-            <div class="buyzone">
-              <div class="price-pill"><span class="old">39,98€</span><span class="new">29,99€</span></div>
-              <a id="btn-pack" class="cta cta-pack pulse" href="https://buy.stripe.com/9B63cv19745i6En9bp7Zu08"><i class="fa-solid fa-bolt"></i>Prendre le Pack 29,99€</a>
-              <small class="muted" style="margin-top:-4px">Paiement sécurisé Stripe — téléchargement immédiat<span class="trust-note">⚡ 80% des élèves choisissent ce pack</span></small>
-              <div class="badge-best" style="position:absolute; bottom:12px; right:12px;"><i class="fa-solid fa-star"></i> Le plus vendu</div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Moyens mémotechniques pour retenir facilement</span></li>
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Téléchargement instantané a durée illimité </span></li>
+</ul>
+<div class="buyzone">
+<div class="price-pill"><span class="old">19,99€</span><span class="new">9,99€</span></div>
+<a class="cta cta-light" href="https://buy.stripe.com/bJe9ATcRP31e0fZdrF7Zu09" id="btn-memo"><i class="fa-solid fa-lock"></i>Acheter la synthèse express</a>
+<small class="muted">⚡ Promo spéciale valable <strong>1 semaine seulement</strong></small>
+</div>
+</article>
+<article aria-labelledby="prod1" class="service-card pop">
+<h3 class="service-title" id="prod1"><span class="hicon"><i class="fa-solid fa-book"></i></span> Synthèse Permis B</h3>
+<ul class="features">
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>30 pages claires et efficaces</span></li>
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Fautes éliminatoires bien signalées</span></li>
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Explications rapide et simple</span></li>
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Téléchargement instantané a durée illimité</span></li>
+</ul>
+<div class="buyzone">
+<div class="price-pill"><span class="new">14,99€</span></div>
+<a class="cta cta-light" href="https://buy.stripe.com/fZu5kDdVTgS41k39bp7Zu06" id="btn-synthese"><i class="fa-solid fa-lock"></i>Acheter la synthèse</a>
+</div>
+</article>
+<article aria-labelledby="prod2" class="service-card pop">
+<h3 class="service-title" id="prod2"><span class="hicon"><i class="fa-solid fa-gears"></i></span> Logiciel d'examen</h3>
+<ul class="features">
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Questions types AM, B, C, D</span></li>
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Simulateurs réalistes, corrections guidées</span></li>
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Mises à jour régulières</span></li>
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Téléchargement instantané a durée illimité</span></li>
+</ul>
+<div class="buyzone">
+<div class="price-pill"><span class="new">24,99€</span></div>
+<a class="cta cta-light" href="https://buy.stripe.com/cNifZh9FDbxK1k34V97Zu07" id="btn-logiciel"><i class="fa-solid fa-lock"></i>Acheter le logiciel</a>
+</div>
+</article>
+</div>
+<div class="grid" style="margin-top:24px">
+<article aria-labelledby="prod-pack" class="service-card flash-pack flash-glow pack-hero" style="position:relative">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
+<h3 class="service-title" id="prod-pack" style="margin:0"><span class="bolt">⚡</span><span class="hicon"><i class="fa-solid fa-fire"></i></span> Pack Synthèse + Logiciel</h3>
+</div>
+<ul class="features">
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Accès a la synthèse claire et efficace</span></li>
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Logiciel <strong>complet </strong> avec les mêmes questions et les mêmes images qu'a l'examen</span></li>
+<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Téléchargement instantané a durée illimité</span></li>
+</ul>
+<div class="buyzone">
+<div class="price-pill"><span class="old">39,98€</span><span class="new">29,99€</span></div>
+<a class="cta cta-pack pulse" href="https://buy.stripe.com/9B63cv19745i6En9bp7Zu08" id="btn-pack"><i class="fa-solid fa-bolt"></i>Prendre le Pack 29,99€</a>
+<small class="muted" style="margin-top:-4px">Paiement sécurisé Stripe — téléchargement immédiat<span class="trust-note">⚡ 80% des élèves choisissent ce pack</span></small>
+<div class="badge-best" style="position:absolute; bottom:12px; right:12px;"><i class="fa-solid fa-star"></i> Le plus vendu</div>
+</div>
+</article>
+</div>
+</div>
+</section>
 <!-- Comment ça marche -->
-    <section id="comment" aria-labelledby="titre-steps" style="background:#fffaf3;border-block:1px solid var(--stroke)">
-      <div class="container">
-        <h2 id="titre-steps" class="section-title">Comment ça marche ?</h2>
-        <div class="grid">
-          <div class="step card">
-            <div class="step-number"></div>
-            <div>
-              <strong>Achète en ligne</strong>
-              <p class="muted">Paiement sécurisé par Stripe en quelques secondes.</p>
-            </div>
-          </div>
-          <div class="step card">
-            <div class="step-number"></div>
-            <div>
-              <strong>Télécharge & installe</strong>
-              <p class="muted">Accès immédiat aux fichiers et au simulateur.</p>
-            </div>
-          </div>
-          <div class="step card">
-            <div class="step-number"></div>
-            <div>
-              <strong>Entraîne-toi efficacement</strong>
-              <p class="muted">Révise l'essentiel et habitue-toi au format d'examen.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ (social proof raisonné au lieu d'avis) -->
-    <section id="faq" aria-labelledby="titre-faq">
-      <div class="container">
-        <h2 id="titre-faq" class="section-title">FAQ</h2>
-        <details>
-          <summary>Le paiement est-il vraiment sécurisé ?</summary>
-          <p>Oui. Le paiement est traité par Stripe, un prestataire de paiement reconnu. Nous ne stockons aucune donnée bancaire sur le site.</p>
-        </details>
-        <details>
-          <summary>Quand recevrai-je mes fichiers ?</summary>
-          <p>Immédiatement après paiement : un lien de téléchargement s'affiche et un e‑mail de confirmation est envoyé.</p>
-        </details>
-        <details>
-          <summary>Les contenus sont-ils à jour ?</summary>
-          <p>Nous effectuons des mises à jour régulières du simulateur et de la synthèse lorsque c'est nécessaire.</p>
-        </details>
-        <details>
-          <summary>Comment vous contacter ?</summary>
-          <p>Par e‑mail à <a href="mailto:permisfacilebe@gmail.com">permisfacilebe@gmail.com</a>. Nous répondons généralement sous 24h ouvrées.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- Bande confiance -->
-    <section aria-label="Garantie et conformité" style="padding-top:0">
-      <div class="container card" role="note">
-        <p style="margin:0"><i class="fa-solid fa-circle-info"></i> 
-          <strong>Transparence :</strong> pas d'abonnement ni de frais cachés. TVA incluse si applicable. 
+<section aria-labelledby="titre-steps" id="comment" style="background:#fffaf3;border-block:1px solid var(--stroke)">
+<div class="container">
+<h2 class="section-title" id="titre-steps">Comment ça marche ?</h2>
+<div class="grid">
+<div class="step card">
+<div class="step-number"></div>
+<div>
+<strong>Achète en ligne</strong>
+<p class="muted">Paiement sécurisé par Stripe en quelques secondes.</p>
+</div>
+</div>
+<div class="step card">
+<div class="step-number"></div>
+<div>
+<strong>Télécharge &amp; installe</strong>
+<p class="muted">Accès immédiat aux fichiers et au simulateur.</p>
+</div>
+</div>
+<div class="step card">
+<div class="step-number"></div>
+<div>
+<strong>Entraîne-toi efficacement</strong>
+<p class="muted">Révise l'essentiel et habitue-toi au format d'examen.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ (social proof raisonné au lieu d'avis) -->
+<section aria-labelledby="titre-faq" id="faq">
+<div class="container">
+<h2 class="section-title" id="titre-faq">FAQ</h2>
+<details>
+<summary>Le paiement est-il vraiment sécurisé ?</summary>
+<p>Oui. Le paiement est traité par Stripe, un prestataire de paiement reconnu. Nous ne stockons aucune donnée bancaire sur le site.</p>
+</details>
+<details>
+<summary>Quand recevrai-je mes fichiers ?</summary>
+<p>Immédiatement après paiement : un lien de téléchargement s'affiche et un e‑mail de confirmation est envoyé.</p>
+</details>
+<details>
+<summary>Les contenus sont-ils à jour ?</summary>
+<p>Nous effectuons des mises à jour régulières du simulateur et de la synthèse lorsque c'est nécessaire.</p>
+</details>
+<details>
+<summary>Comment vous contacter ?</summary>
+<p>Par e‑mail à <a href="mailto:permisfacilebe@gmail.com">permisfacilebe@gmail.com</a>. Nous répondons généralement sous 24h ouvrées.</p>
+</details>
+</div>
+</section>
+<!-- Bande confiance -->
+<section aria-label="Garantie et conformité" style="padding-top:0">
+<div class="container card" role="note">
+<p style="margin:0"><i class="fa-solid fa-circle-info"></i>
+<strong>Transparence :</strong> pas d'abonnement ni de frais cachés. TVA incluse si applicable. 
           <strong>Besoin d'aide ?</strong> Écris-nous : <a href="mailto:permisfacilebe@gmail.com">permisfacilebe@gmail.com</a>.
         </p>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container cols">
-        <div>
-          <h4>PermisFacile.be</h4>
-          <p class="muted">Outils simples et efficaces pour réussir ton permis théorique.</p>
-          <div class="badges" style="justify-content:flex-start">
-            <span class="badge"><i class="fa-solid fa-lock"></i> Stripe</span>
-            <span class="badge"><i class="fa-solid fa-cloud-arrow-down"></i> Accès immédiat</span>
-          </div>
-        </div>
-        <div>
-          <h4>Aide</h4>
-          <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="mailto:permisfacilebe@gmail.com">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Légal</h4>
-          <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
-            <li><a href="#" aria-disabled="true">Mentions légales</a></li>
-            <li><a href="#" aria-disabled="true">Politique de confidentialité</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="sub">© 2025 PermisFacile.be — Tous droits réservés</div>
-    </footer>
-
-    <!-- FAQ structured data -->
-    <script type="application/ld+json">
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="container cols">
+<div>
+<h4>PermisFacile.be</h4>
+<p class="muted">Outils simples et efficaces pour réussir ton permis théorique.</p>
+<div class="badges" style="justify-content:flex-start">
+<span class="badge"><i class="fa-solid fa-lock"></i> Stripe</span>
+<span class="badge"><i class="fa-solid fa-cloud-arrow-down"></i> Accès immédiat</span>
+</div>
+</div>
+<div>
+<h4>Aide</h4>
+<ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+<li><a href="#faq">FAQ</a></li>
+<li><a href="mailto:permisfacilebe@gmail.com">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4>Légal</h4>
+<ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+<li><a aria-disabled="true" href="#">Mentions légales</a></li>
+<li><a aria-disabled="true" href="#">Politique de confidentialité</a></li>
+</ul>
+</div>
+</div>
+<div class="sub">© 2025 PermisFacile.be — Tous droits réservés</div>
+</footer>
+<!-- FAQ structured data -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -474,9 +511,8 @@
       ]
     }
     </script>
-
-    <!-- Accessibilité : réduit les animations si demandé par l'utilisateur -->
-    <script>
+<!-- Accessibilité : réduit les animations si demandé par l'utilisateur -->
+<script>
       const media = window.matchMedia('(prefers-reduced-motion: reduce)');
       if (media.matches) {
         document.querySelectorAll('.wheel').forEach(w=>w.style.animation='none');
@@ -484,8 +520,7 @@
         if (road) road.style.animation='none';
       }
     </script>
-  
-    <script>
+<script>
       document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
           const id = a.getAttribute('href');
@@ -499,7 +534,6 @@
         });
       });
     </script>
-    
 <script>
   // Smooth scroll + visual cue
   (function(){
@@ -524,25 +558,20 @@
     });
   })();
 </script>
-
 </body>
-</html>
-
-</body>
-</html>
+</body></html>
 <!DOCTYPE html>
+
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PermisFacile</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.png" type="image/png">
-  </head>
-  <body>
-    <!-- ton contenu -->
-  </body>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PermisFacile</title>
+<!-- Favicon -->
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<!-- ton contenu -->
+</body>
 </html>
-
