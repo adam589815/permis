@@ -5,10 +5,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>PermisFacile.be — Réussis ton permis en toute confiance</title>
-<meta content="Synthèse PDF claire du code de la route (30 pages) et simulateur d'examen réaliste. Paiement sécurisé Stripe, téléchargement immédiat, support réactif." name="description"/>
+<meta content="Deux synthèses PDF claires du code de la route (10 pages + 30 pages). Paiement sécurisé Stripe, téléchargement immédiat." name="description"/>
 <!-- OpenGraph -->
 <meta content="PermisFacile.be — Réussis ton permis en toute confiance" property="og:title"/>
-<meta content="Synthèse PDF claire (30 pages) + logiciel simulateur d'examen. -50% avec le code ETE2025 jusqu'au 1er septembre 2025." property="og:description"/>
+<meta content="Deux synthèses PDF (10p + 30p). Pack ULTRA PROMO: 20€ pour les 2 synthèses." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://www.permisfacile.be" property="og:url"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -250,8 +250,116 @@
   color:#111; border:1px solid #111; border-radius:999px;
   font-weight:800; font-size:11px; padding:5px 9px; line-height:1;
 }
-</style></head>
+</style>
+<style>
+  /* === Overrides: product cards sizing & grid === */
+  .services-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    gap: 16px !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    align-items: start !important;
+  }
+  .service-card {
+    max-width: 380px !important;  /* ~ largeur d'une porte */
+    margin: 0 auto !important;
+  }
+  /* Reduce excessive padding so cards feel compact */
+  .service-card .features { margin-top: 8px !important; }
+  .service-card .buyzone { margin-top: 10px !important; }
+  .price-pill { transform: none !important; }
+</style>
+
+
+<style>
+/* ====== PermisFacile product cards (high-contrast, pro) ====== */
+.pf-grid{
+  display:grid; gap:20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 1100px; margin: 0 auto;
+}
+.pf-card{
+  border:2px solid #F8C246; background:#fff; border-radius:18px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  padding:20px; position:relative;
+}
+.pf-card .pf-head{
+  display:flex; align-items:center; gap:10px; margin-bottom:10px;
+}
+.pf-ico{
+  width:28px; height:28px; border:2px solid #F8C246; border-radius:10px;
+  display:flex; align-items:center; justify-content:center; font-size:16px; color:#222; background:#FFF9E7;
+}
+.pf-title{ font-weight:800; font-size:1.35rem; margin:0; }
+.pf-chip{position:absolute;top:6px;right:10px;font-size:.7rem;padding:3px 8px;border:2px solid #F5A200;border-radius:10px;background:#FFF4CC;font-weight:700;transform:translateY(-4px);}
+.pf-list{ list-style:none; padding:0; margin:10px 0 18px 0; }
+.pf-list li{ display:flex; gap:10px; align-items:flex-start; margin:10px 0; }
+.pf-tick svg{ width:18px; height:18px; flex:0 0 18px; }
+.pf-price{
+  display:inline-flex; gap:10px; align-items:center; margin:8px 0 16px 0;
+  background:#FFC94A; padding:10px 18px; border-radius:12px; font-weight:800;
+  box-shadow:0 4px 0 rgba(0,0,0,.1);
+}
+.pf-price .old{ text-decoration:line-through; color:#e53935 !important; font-weight:700; }
+.pf-btn{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  width:100%; background:#fff; border:2px solid #111; border-radius:14px;
+  padding:12px 14px; font-weight:800; text-decoration:none; color:#111;
+  box-shadow:0 2px 0 rgba(0,0,0,.9);
+}
+.pf-note{ font-size:.9rem; color:#777; margin-top:10px; display:flex; align-items:center; gap:6px; }
+.pf-note .bolt{ font-size:1rem; }
+@media (min-width: 980px){
+  .pf-grid{ grid-template-columns: repeat(3, minmax(320px, 1fr)); }
+}
+</style>
+
+
+<style>
+  /* High-contrast tweaks */
+  .pf-card{ border-color:#F5A200 !important; box-shadow:0 6px 18px rgba(0,0,0,.08) !important; }
+  .pf-ico{ border-color:#F5A200 !important; background:#FFF4CC !important; }
+  .pf-chip{position:absolute;top:6px;right:10px;font-size:.7rem;padding:3px 8px;border:2px solid #F5A200;border-radius:10px;background:#FFF4CC;font-weight:700;transform:translateY(-4px);}
+  .pf-title{ color:#0F172A !important; }
+  .pf-list span{ color:#111 !important; }
+  .pf-price{ background:#FFC107 !important; box-shadow:0 5px 0 rgba(0,0,0,.15) !important; }
+  .pf-price .old{ text-decoration:line-through; color:#e53935 !important; font-weight:700; }
+  /* Pro black buttons */
+  .pf-btn{ background:#000 !important; color:#fff !important; border-color:#000 !important; box-shadow:0 3px 0 rgba(0,0,0,.7) !important; }
+  .pf-btn:hover{ transform:translateY(-1px); box-shadow:0 4px 0 rgba(0,0,0,.8) !important; }
+  .pf-btn:active{ transform:translateY(0); box-shadow:0 2px 0 rgba(0,0,0,.7) !important; }
+  /* Tick icon: green circle with white check (more pro) */
+  .pf-tick svg{ width:18px; height:18px; }
+</style>
+
+
+<style>
+  #btn-pack-20{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    margin-top:10px !important;
+    width:100% !important;
+  }
+</style>
+
+
+<style>
+  #pf-pack{
+    border:3px solid #F5A200 !important;
+    box-shadow:0 8px 22px rgba(245,162,0,0.35) !important;
+    transform:scale(1.02);
+  }
+</style>
+
+</head>
 <body>
+
+<div id="promo-banner" style="background:#F5A200;color:#111;font-weight:700;text-align:center;padding:10px 0;font-size:0.95rem;">
+  <a href="#services" style="color:#111;text-decoration:none;">Offre spéciale : Le pack 2 synthèses est à <strong>19,99 € au lieu de 34,99 €</strong> – seulement cette semaine !</a>
+</div>
+
 <body>
 <!-- Top navigation -->
 <div class="topbar">
@@ -269,7 +377,7 @@
 <header class="hero">
 <div class="container">
 <h1>Réussis ton permis théorique<br/>simplement et en toute confiance</h1>
-<p>La <strong>synthèse PDF</strong> (30 pages) et le <strong>simulateur d'examen</strong> vont droit à l'essentiel.
+<p>Des <strong>synthèses PDF</strong> claires (10 pages et 30 pages) vont droit à l'essentiel.
           Paiement sécurisé via Stripe &amp; téléchargement immédiat.</p>
 <div style="margin-top:16px">
 <a class="cta" href="#services">Voir nos services</a>
@@ -312,17 +420,10 @@
 <div class="container grid cols-2">
 <div>
 <h2 class="section-title" id="titre-video">Découvre en 60 secondes</h2>
-<p class="muted">Présentation rapide de la méthode et de l'interface de simulation.</p>
+<p class="muted">Présentation rapide de la méthode et des contenus.</p>
 <div class="video-wrap">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="340" src="https://www.youtube.com/embed/ACF5MK_aX9E" title="Présentation PermisFacile.be" width="100%"></iframe>
 </div>
-</div>
-<div>
-<div class="offer flash-glow" style="border-width:2px">
-<i class="fa-solid fa-bolt"></i>
-<strong>ULTRA PROMO : Pack complet 29,99€</strong>
-<span>Synthèse <b>+ Logiciel</b> — au lieu de <b>40€</b>.</span>
-<span class="muted">Meilleure offre : prépare-toi à l'examen pour moins de 30€.</span>
 </div>
 <ul class="grid" style="margin-top:18px">
 <li class="card"> Contenu clair et efficace</li>
@@ -330,86 +431,58 @@
 <li class="card"> Focus sur les fautes éliminatoires</li>
 </ul>
 <div style="margin-top:16px">
-<a class="cta-major" href="#services"><i class="fa-solid fa-fire"></i>Profiter du pack 29,99€</a>
+
 </div>
 </div>
 </div>
 </section>
 <!-- Services / Produits -->
-<section aria-labelledby="titre-services" id="services">
-<div class="container">
-<h2 class="section-title" id="titre-services">Nos offres</h2>
-<p class="pricing-note">Achète séparément si tu veux, mais le pack est <strong>imbattable</strong> 👇</p>
-<div class="grid cols-3">
-<article aria-labelledby="prod3" class="service-card pop promo">
-<h3 class="service-title" id="prod3">
-<span class="hicon"><i class="fa-solid fa-lightbulb"></i></span> Synthèse Express
-  </h3>
-<ul class="features">
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Résumé ultra efficace de 10 pages</span></li>
-<li class="feature">
-<span class="tick">
-<svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg>
-</span>
-<span>Fautes éliminatoires bien signalées</span>
-</li>
-
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Moyens mémotechniques pour retenir facilement</span></li>
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Téléchargement instantané a durée illimité </span></li>
-</ul>
-<div class="buyzone">
-<div class="price-pill"><span class="old">19,99€</span><span class="new">9,99€</span></div>
-<a class="cta cta-light" href="https://buy.stripe.com/bJe9ATcRP31e0fZdrF7Zu09" id="btn-memo"><i class="fa-solid fa-lock"></i>Acheter la synthèse express</a>
-<small class="muted">⚡ Promo spéciale valable <strong>1 semaine seulement</strong></small>
-</div>
+<section aria-labelledby="titre-services" id="services"><h2 class="section-title" id="titre-services">Nos offres</h2>
+<div class="pf-grid">
+  <article class="pf-card" id="pf-express">
+  <div class="pf-head">
+    <div class="pf-ico"><i class="fa-solid fa-lightbulb"></i></div>
+    <h3 class="pf-title">Synthèse Express</h3>
+  </div>
+  <div class="pf-chip">-50% cette semaine</div>
+  <ul class="pf-list">
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Résumé ultra efficace de 10 pages</span></li>
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Fautes éliminatoires bien signalées</span></li>
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Moyens mnémotechniques pour retenir facilement</span></li>
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Téléchargement instantané à durée illimitée</span></li>
+  </ul>
+  <div class="pf-price"><span class="old">19,99€</span><span>9,99€</span></div>
+  <a href="https://buy.stripe.com/bJe9ATcRP31e0fZdrF7Zu09" class="pf-btn" id="btn-express"><i class="fa-solid fa-lock"></i> Acheter la synthèse express</a>
+  <div class="pf-note"><span class="bolt">⚡</span><span>Promo spéciale valable <strong>1 semaine seulement</strong></span></div>
 </article>
-<article aria-labelledby="prod1" class="service-card pop">
-<h3 class="service-title" id="prod1"><span class="hicon"><i class="fa-solid fa-book"></i></span> Synthèse Permis B</h3>
-<ul class="features">
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>30 pages claires et efficaces</span></li>
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Fautes éliminatoires bien signalées</span></li>
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Explications rapide et simple</span></li>
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Téléchargement instantané a durée illimité</span></li>
-</ul>
-<div class="buyzone">
-<div class="price-pill"><span class="new">14,99€</span></div>
-<a class="cta cta-light" href="https://buy.stripe.com/fZu5kDdVTgS41k39bp7Zu06" id="btn-synthese"><i class="fa-solid fa-lock"></i>Acheter la synthèse</a>
-</div>
+  <article class="pf-card" id="pf-permisb">
+  <div class="pf-head">
+    <div class="pf-ico"><i class="fa-solid fa-book"></i></div>
+    <h3 class="pf-title">Synthèse Permis B</h3>
+  </div>
+  <ul class="pf-list">
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>30 pages claires et efficaces</span></li>
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Fautes éliminatoires bien signalées</span></li>
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Explications rapides et simples</span></li>
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Téléchargement instantané à durée illimitée</span></li>
+  </ul>
+  <div class="pf-price"><span>14,99€</span></div>
+  <a href="https://buy.stripe.com/fZu5kDdVTgS41k39bp7Zu06" class="pf-btn" id="btn-permisb"><i class="fa-solid fa-lock"></i> Acheter la synthèse</a>
 </article>
-<article aria-labelledby="prod2" class="service-card pop">
-<h3 class="service-title" id="prod2"><span class="hicon"><i class="fa-solid fa-gears"></i></span> Logiciel d'examen</h3>
-<ul class="features">
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Questions types AM, B, C, D</span></li>
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Simulateurs réalistes, corrections guidées</span></li>
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Mises à jour régulières</span></li>
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Téléchargement instantané a durée illimité</span></li>
-</ul>
-<div class="buyzone">
-<div class="price-pill"><span class="new">24,99€</span></div>
-<a class="cta cta-light" href="https://buy.stripe.com/cNifZh9FDbxK1k34V97Zu07" id="btn-logiciel"><i class="fa-solid fa-lock"></i>Acheter le logiciel</a>
-</div>
+  <article class="pf-card" id="pf-pack">
+  <div class="pf-head">
+    <div class="pf-ico"><i class="fa-solid fa-gears"></i></div>
+    <h3 class="pf-title">Pack 2 Synthèses (Express + B)</h3>
+  </div>
+  <ul class="pf-list">
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>10 pages Express + 30 pages Permis B</span></li>
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Fautes éliminatoires bien signalées</span></li>
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Téléchargement instantané — accès illimité</span></li>
+  </ul>
+  <div class="pf-price"><span class="old">34,99€</span><span>19,99€</span></div>
+  <a href="https://buy.stripe.com/7sY6oHeZXgS4e6PfzN7Zu0a" class="pf-btn" id="btn-pack-20"><i class="fa-solid fa-lock"></i> Acheter le pack</a>
 </article>
-</div>
-<div class="grid" style="margin-top:24px">
-<article aria-labelledby="prod-pack" class="service-card flash-pack flash-glow pack-hero" style="position:relative">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
-<h3 class="service-title" id="prod-pack" style="margin:0"><span class="bolt">⚡</span><span class="hicon"><i class="fa-solid fa-fire"></i></span> Pack Synthèse + Logiciel</h3>
-</div>
-<ul class="features">
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Accès a la synthèse claire et efficace</span></li>
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Logiciel <strong>complet </strong> avec les mêmes questions et les mêmes images qu'a l'examen</span></li>
-<li class="feature"><span class="tick"><svg viewbox="0 0 16 16"><path d="M6.5 11.3 3.7 8.5l1.4-1.4 1.4 1.4 4.4-4.4 1.4 1.4-5.8 5.8z"></path></svg></span><span>Téléchargement instantané a durée illimité</span></li>
-</ul>
-<div class="buyzone">
-<div class="price-pill"><span class="old">39,98€</span><span class="new">29,99€</span></div>
-<a class="cta cta-pack pulse" href="https://buy.stripe.com/9B63cv19745i6En9bp7Zu08" id="btn-pack"><i class="fa-solid fa-bolt"></i>Prendre le Pack 29,99€</a>
-<small class="muted" style="margin-top:-4px">Paiement sécurisé Stripe — téléchargement immédiat<span class="trust-note">⚡ 80% des élèves choisissent ce pack</span></small>
-<div class="badge-best" style="position:absolute; bottom:12px; right:12px;"><i class="fa-solid fa-star"></i> Le plus vendu</div>
-</div>
-</article>
-</div>
-</div>
-</section>
+</div></section>
 <!-- Comment ça marche -->
 <section aria-labelledby="titre-steps" id="comment" style="background:#fffaf3;border-block:1px solid var(--stroke)">
 <div class="container">
@@ -425,8 +498,8 @@
 <div class="step card">
 <div class="step-number"></div>
 <div>
-<strong>Télécharge &amp; installe</strong>
-<p class="muted">Accès immédiat aux fichiers et au simulateur.</p>
+<strong>Télécharge tes fichiers</strong>
+<p class="muted">Accès immédiat aux synthèses après paiement.</p>
 </div>
 </div>
 <div class="step card">
@@ -453,7 +526,7 @@
 </details>
 <details>
 <summary>Les contenus sont-ils à jour ?</summary>
-<p>Nous effectuons des mises à jour régulières du simulateur et de la synthèse lorsque c'est nécessaire.</p>
+<p>Nous effectuons des mises à jour régulières des synthèses lorsque c'est nécessaire.</p>
 </details>
 <details>
 <summary>Comment vous contacter ?</summary>
@@ -560,18 +633,3 @@
 </script>
 </body>
 </body></html>
-<!DOCTYPE html>
-
-<html lang="fr">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PermisFacile</title>
-<!-- Favicon -->
-<link href="/favicon.ico" rel="icon" sizes="any"/>
-<link href="/favicon.png" rel="icon" type="image/png"/>
-</head>
-<body>
-<!-- ton contenu -->
-</body>
-</html>
