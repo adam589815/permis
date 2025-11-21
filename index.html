@@ -244,7 +244,7 @@
 .service-card.promo{position:relative}
 .service-card.promo .service-title{padding-right:130px}
 .service-card.promo::after{
-  content:"🔥 -50% cette semaine";
+  content:"🔥 -50% pendant 2 semaines";
   position:absolute; top:10px; right:10px;
   background:linear-gradient(135deg, var(--brand), var(--brand-2));
   color:#111; border:1px solid #111; border-radius:999px;
@@ -270,8 +270,6 @@
   .service-card .buyzone { margin-top: 10px !important; }
   .price-pill { transform: none !important; }
 </style>
-
-
 <style>
 /* ====== PermisFacile product cards (high-contrast, pro) ====== */
 .pf-grid{
@@ -314,8 +312,6 @@
   .pf-grid{ grid-template-columns: repeat(3, minmax(320px, 1fr)); }
 }
 </style>
-
-
 <style>
   /* High-contrast tweaks */
   .pf-card{ border-color:#F5A200 !important; box-shadow:0 6px 18px rgba(0,0,0,.08) !important; }
@@ -332,8 +328,6 @@
   /* Tick icon: green circle with white check (more pro) */
   .pf-tick svg{ width:18px; height:18px; }
 </style>
-
-
 <style>
   #btn-pack-20{
     display:flex !important;
@@ -343,8 +337,6 @@
     width:100% !important;
   }
 </style>
-
-
 <style>
   #pf-pack{
     border:3px solid #F5A200 !important;
@@ -353,13 +345,83 @@
   }
 </style>
 
+<style>
+#promo-banner{
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background:#000;
+  color:#fff;
+  font-weight:700;
+  text-align:center;
+  padding:10px 0;
+}
+.bf-pill{
+  background:#F5A200;
+  color:#111;
+  padding:5px 10px;
+  border-radius:8px;
+  margin-right:8px;
+  animation: pulse 1.2s infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+  100%{transform:scale(1);}
+}
+</style>
+
+
+<style>
+/* === Pack Black Friday : centré + plus vendu doré === */
+#pf-pack-bf{
+  border:3px solid #FFD700 !important;
+  box-shadow:0 14px 36px rgba(0,0,0,.22) !important;
+  background:radial-gradient(circle at top, #FFF7C2 0%, #FFFFFF 55%);
+}
+#pf-pack-bf .pf-ico{
+  border-color:#FFD700 !important;
+  background:#FFF1A6 !important;
+}
+#pf-pack-bf .pf-price{
+  background:#FFD700 !important;
+}
+.pf-best-chip{
+  background:linear-gradient(135deg,#FFF7C2,#FFD700);
+  border-color:#111;
+  color:#111;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-size:.7rem;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+.pf-best-chip i{
+  font-size:.75rem;
+}
+@media (min-width: 900px){
+  /* Centre le pack Black Friday sur la grille */
+  .pf-grid #pf-pack-bf{
+    grid-column:1 / -1;
+    max-width:420px;
+    margin:0 auto 10px auto;
+  }
+}
+</style>
+
 </head>
 <body>
-
-<div id="promo-banner" style="background:#F5A200;color:#111;font-weight:700;text-align:center;padding:10px 0;font-size:0.95rem;">
-  <a href="#services" style="color:#111;text-decoration:none;">Offre spéciale : Le pack 2 synthèses est à <strong>19,99 € au lieu de 34,99 €</strong> – seulement cette semaine !</a>
+<div id="promo-banner">
+  <a href="#services">
+    <span class="bf-pill">
+      <span>-50% BLACK FRIDAY</span>
+    </span>
+    <span>
+      Plusieurs produits sont à <strong>-50% pendant 2 semaines</strong> – Retrouvez le Pack Black Friday avec tous les produits du site !
+    </span>
+  </a>
 </div>
-
 <body>
 <!-- Top navigation -->
 <div class="topbar">
@@ -427,62 +489,87 @@
 </div>
 <ul class="grid" style="margin-top:18px">
 <li class="card"> Contenu clair et efficace</li>
-<li class="card"> Simulations proches de l'examen</li>
+<li class="card"> Mises a jour régulières</li>
 <li class="card"> Focus sur les fautes éliminatoires</li>
 </ul>
 <div style="margin-top:16px">
+</div>
+</div>
 
-</div>
-</div>
-</div>
 </section>
 <!-- Services / Produits -->
 <section aria-labelledby="titre-services" id="services"><h2 class="section-title" id="titre-services">Nos offres</h2>
-<div class="pf-grid">
-  <article class="pf-card" id="pf-express">
-  <div class="pf-head">
-    <div class="pf-ico"><i class="fa-solid fa-lightbulb"></i></div>
-    <h3 class="pf-title">Synthèse Express</h3>
-  </div>
-  <div class="pf-chip">-50% cette semaine</div>
-  <ul class="pf-list">
-    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Résumé ultra efficace de 10 pages</span></li>
-    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Fautes éliminatoires bien signalées</span></li>
-    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Moyens mnémotechniques pour retenir facilement</span></li>
-    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Téléchargement instantané à durée illimitée</span></li>
-  </ul>
-  <div class="pf-price"><span class="old">19,99€</span><span>9,99€</span></div>
-  <a href="https://buy.stripe.com/bJe9ATcRP31e0fZdrF7Zu09" class="pf-btn" id="btn-express"><i class="fa-solid fa-lock"></i> Acheter la synthèse express</a>
-  <div class="pf-note"><span class="bolt">⚡</span><span>Promo spéciale valable <strong>1 semaine seulement</strong></span></div>
-</article>
-  <article class="pf-card" id="pf-permisb">
-  <div class="pf-head">
-    <div class="pf-ico"><i class="fa-solid fa-book"></i></div>
-    <h3 class="pf-title">Synthèse Permis B</h3>
-  </div>
-  <ul class="pf-list">
-    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>30 pages claires et efficaces</span></li>
-    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Fautes éliminatoires bien signalées</span></li>
-    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Explications rapides et simples</span></li>
-    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Téléchargement instantané à durée illimitée</span></li>
-  </ul>
-  <div class="pf-price"><span>14,99€</span></div>
-  <a href="https://buy.stripe.com/fZu5kDdVTgS41k39bp7Zu06" class="pf-btn" id="btn-permisb"><i class="fa-solid fa-lock"></i> Acheter la synthèse</a>
-</article>
-  <article class="pf-card" id="pf-pack">
-  <div class="pf-head">
-    <div class="pf-ico"><i class="fa-solid fa-gears"></i></div>
-    <h3 class="pf-title">Pack 2 Synthèses (Express + B)</h3>
-  </div>
-  <ul class="pf-list">
-    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>10 pages Express + 30 pages Permis B</span></li>
-    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Fautes éliminatoires bien signalées</span></li>
-    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg></span><span>Téléchargement instantané — accès illimité</span></li>
-  </ul>
-  <div class="pf-price"><span class="old">34,99€</span><span>19,99€</span></div>
-  <a href="https://buy.stripe.com/7sY6oHeZXgS4e6PfzN7Zu0a" class="pf-btn" id="btn-pack-20"><i class="fa-solid fa-lock"></i> Acheter le pack</a>
-</article>
-</div></section>
+<div class="pf-grid"><article class="pf-card" id="pf-pack-bf">
+<span class="pf-chip pf-best-chip"><i class="fa-solid fa-crown"></i> Plus vendu</span>
+<div class="pf-head">
+<div class="pf-ico"><i class="fa-solid fa-fire"></i></div>
+<h3 class="pf-title">Pack Black Friday</h3>
+</div>
+<ul class="pf-list">
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Inclut la synthèse Express  (10 pages)</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Inclut la synthèse Permis B (en profondeur)</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Inclut le pack audio 20 minutes + fiches offertes</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Téléchargement instantané &amp; accès illimité</span></li>
+</ul>
+<div class="pf-price"><span>49,99€</span></div>
+<a class="pf-btn" href="https://buy.stripe.com/8x27sL8BzdFS9Qz87l7Zu0d" id="btn-pack-bf"><i class="fa-solid fa-lock"></i> Acheter le pack Black Friday</a>
+</article><article class="pf-card" id="pf-audio">
+<div class="pf-head">
+<div class="pf-ico"><i class="fa-solid fa-headphones"></i></div>
+<h3 class="pf-title">Pack Audio 20 minutes</h3>
+</div>
+<ul class="pf-list">
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Guide audio de 20 minutes très clair</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Résume l'essentiel du code de la route</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Met en avant toutes les fautes graves</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Téléchargement instantané et accès illimité</span></li>
+</ul>
+<div class="pf-price"><span class="old">59,99€</span><span>29,99€</span></div>
+<a class="pf-btn" href="https://buy.stripe.com/dRm8wPdVT9pCfaT1IX7Zu0c" id="btn-audio"><i class="fa-solid fa-lock"></i> Acheter le pack audio</a>
+</article><article class="pf-card" id="pf-express">
+<div class="pf-head">
+<div class="pf-ico"><i class="fa-solid fa-lightbulb"></i></div>
+<h3 class="pf-title">Synthèse Express</h3>
+</div>
+<ul class="pf-list">
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Résumé ultra efficace de 10 pages</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Fautes éliminatoires bien signalées</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Moyens mnémotechniques pour retenir facilement</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Téléchargement instantané à durée illimitée</span></li>
+</ul>
+<div class="pf-price"><span class="old">19,99€</span><span>9,99€</span></div>
+<a class="pf-btn" href="https://buy.stripe.com/bJe9ATcRP31e0fZdrF7Zu09" id="btn-express"><i class="fa-solid fa-lock"></i> Acheter la synthèse express</a>
+</article><article class="pf-card" id="pf-permisb">
+<div class="pf-head">
+<div class="pf-ico"><i class="fa-solid fa-book"></i></div>
+<h3 class="pf-title">Synthèse Permis B</h3>
+</div>
+<ul class="pf-list">
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>30 pages complètes &amp; claires</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Fautes éliminatoires bien signalées</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Explications rapides et simples</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Téléchargement instantané à durée illimitée</span></li>
+</ul>
+<div class="pf-price"><span class="old">39,99€</span><span>19,99€</span></div>
+<a class="pf-btn" href="https://buy.stripe.com/8x26oH053eJWe6P5Zd7Zu0f" id="btn-permisb"><i class="fa-solid fa-lock"></i> Acheter la synthèse</a>
+</article><article class="pf-card" id="pf-pack">
+<div class="pf-head">
+<div class="pf-ico"><i class="fa-solid fa-gears"></i></div>
+<h3 class="pf-title">Pack 2 Synthèses (Express + B)</h3>
+</div>
+<ul class="pf-list">
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>10 pages Express + 30 pages Permis B</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Fautes éliminatoires bien signalées</span></li>
+<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Téléchargement instantané — accès illimité</span></li>
+</ul>
+<div class="pf-price"><span class="old">39,99€</span><span>24,99€</span></div>
+<a class="pf-btn" href="https://buy.stripe.com/4gM28rdVT9pCd2LgDR7Zu0e" id="btn-pack-20"><i class="fa-solid fa-lock"></i> Acheter le pack</a>
+</article></div>
+
+
+
+
+</section>
 <!-- Comment ça marche -->
 <section aria-labelledby="titre-steps" id="comment" style="background:#fffaf3;border-block:1px solid var(--stroke)">
 <div class="container">
@@ -564,9 +651,8 @@
 <div>
 <h4>Légal</h4>
 <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
-<li><a href="mentions-legales.html">Mentions légales</a></li>
-<li><a href="confidentialite.html">Politique de confidentialité</a></li>
-<li><a href="cgv.html">Conditions Générales de Vente</a></li>
+<li><a href="#">Mentions légales</a></li>
+<li><a href="#">Politique de confidentialité</a></li>
 </ul>
 </div>
 </div>
