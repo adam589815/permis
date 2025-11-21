@@ -1,38 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <title>Mentions légales – PermisFacile.be</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body{font-family:Arial, sans-serif; padding:20px; max-width:800px; margin:auto; line-height:1.6;}
-a{color:#000;}
+  :root{
+    --brand:#f9b233;
+    --brand-2:#ffd75a;
+    --bg:#ffffff;
+    --text:#111111;
+    --stroke:#f6c76a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:#fffaf3;
+    color:var(--text);
+    padding:40px 16px;
+  }
+  .container{max-width:900px;margin:0 auto;}
+  h1{
+    font-size:2rem;
+    margin-bottom:18px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    -webkit-background-clip:text;
+    color:transparent;
+  }
+  .card{
+    background:#fff;
+    border-radius:18px;
+    border:1px solid var(--stroke);
+    padding:24px 20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+  }
+  p{margin-bottom:12px;line-height:1.5;}
+  strong{font-weight:700;}
+  a{color:#c27800;font-weight:600;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .back{margin-top:20px;display:inline-flex;align-items:center;gap:6px;font-size:.95rem;}
 </style>
 </head>
 <body>
-<h1>Mentions légales</h1>
-<p><strong>Éditeur :</strong> NG MEDIA — BE1008597684<br>
-Spaanse Lindebaan 90, 1850 Grimbergen, Belgique — permisfacilebe@gmail.com<br>
-Site : https://www.permisfacile.be</p>
+  <div class="container">
+    <h1>Mentions légales</h1>
+    <div class="card">
+      <p><strong>Éditeur :</strong> NG MEDIA — BE1008597684<br>
+      Spaanse Lindebaan 90, 1850 Grimbergen, Belgique — 
+      <a href="mailto:permisfacilebe@gmail.com">permisfacilebe@gmail.com</a></p>
 
-<h2>Éditeur du site</h2>
-<p>NG MEDIA (n° d’entreprise BE1008597684).</p>
+      <p><strong>Site :</strong> <a href="https://www.permisfacile.be">https://www.permisfacile.be</a></p>
 
-<h2>Hébergement</h2>
-<p>Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA.</p>
+      <p><strong>Éditeur du site :</strong> NG MEDIA (n° d’entreprise BE1008597684).<br>
+      <strong>Siège social :</strong> Spaanse Lindebaan 90, 1850 Grimbergen, Belgique.<br>
+      <strong>Contact :</strong> <a href="mailto:permisfacilebe@gmail.com">permisfacilebe@gmail.com</a>.</p>
 
-<h2>Objet du site</h2>
-<p>Vente de ressources pédagogiques numériques pour préparer l’examen du permis de conduire.</p>
+      <p><strong>Hébergement :</strong> Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA — vercel.com.</p>
 
-<h2>Propriété intellectuelle</h2>
-<p>Contenu protégé. Reproduction interdite.</p>
+      <p><strong>Objet du site :</strong> vente de ressources pédagogiques numériques pour préparer l’examen du permis de conduire en Belgique.</p>
 
-<h2>Responsabilité</h2>
-<p>NG MEDIA n’est pas responsable d’une mauvaise utilisation des documents.</p>
+      <p><strong>Propriété intellectuelle :</strong> Tous les textes, PDF, visuels et contenus sont protégés par le droit d’auteur. 
+      Toute reproduction, diffusion, revente ou partage public est interdite sans autorisation écrite préalable.</p>
 
-<h2>Contact</h2>
-<p>permisfacilebe@gmail.com</p>
+      <p><strong>Responsabilité :</strong> Le contenu est fourni à titre informatif et pédagogique. 
+      NG MEDIA ne peut être tenue responsable d’une mauvaise utilisation des documents ni des conséquences de décisions prises 
+      sur la base des informations fournies.</p>
 
-<p><a href="index.html">← Retour au site</a></p>
+      <p><strong>Contact :</strong> Pour toute question, écris-nous à 
+      <a href="mailto:permisfacilebe@gmail.com">permisfacilebe@gmail.com</a>.</p>
+
+      <a class="back" href="index.html">← Retour au site</a>
+    </div>
+  </div>
 </body>
 </html>
