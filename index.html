@@ -8,7 +8,7 @@
 <meta content="Deux synthèses PDF claires du code de la route (10 pages + 30 pages). Paiement sécurisé Stripe, téléchargement immédiat." name="description"/>
 <!-- OpenGraph -->
 <meta content="PermisFacile.be — Réussis ton permis en toute confiance" property="og:title"/>
-<meta content="Deux synthèses PDF (10p + 30p). Pack ULTRA PROMO: 20€ pour les 2 synthèses." property="og:description"/>
+<meta content="Offre Noël exclusive 24h : Pack Noël avec tous les produits à 24,99€." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://www.permisfacile.be" property="og:url"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -17,8 +17,8 @@
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f9b233' d='M10 36h44l-3 12H13z'/%3E%3Cpath fill='%23111' d='M52 28H12l4-8h32z'/%3E%3Ccircle cx='20' cy='48' r='6' fill='%23111'/%3E%3Ccircle cx='44' cy='48' r='6' fill='%23111'/%3E%3C/svg%3E" rel="icon"/>
 <style>
       :root{
-        --brand:#f9b233; /* jaune */
-        --brand-2:#ffd75a; /* jaune clair */
+        --brand:#d62828; /* rouge Noël */
+        --brand-2:#2a9d8f; /* vert Noël */
         --bg:#ffffff;
         --text:#111111;
         --muted:#666;
@@ -231,13 +231,14 @@
       .nav a.cta i{margin-right:6px;}
       .hero .actions::after{}
       .hero .blackfriday-btn{
-         background:#000;
-         color:#ffce4f;
+         background:linear-gradient(135deg,var(--brand), var(--brand-2));
+         color:#fff;
          padding:12px 22px;
          border-radius:12px;
-         font-weight:600;
+         font-weight:800;
          display:inline-block;
          margin-top:18px;
+         border:1px solid rgba(255,255,255,.35);
       }
 
       .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;}
@@ -399,22 +400,26 @@
   position: sticky;
   top: 0;
   z-index: 60;
-  background:#000;
+  background:linear-gradient(90deg,#0b0f12 0%, #111 100%);
   color:#fff;
-  font-weight:700;
+  font-weight:800;
   text-align:center;
   padding:10px 0;
 }
 .bf-pill{
-  background:#F5A200;
-  color:#111;
+  background:linear-gradient(135deg,var(--brand), var(--brand-2));
+  color:#fff;
   padding:5px 10px;
-  border-radius:8px;
+  border-radius:10px;
   margin-right:8px;
+  border:1px solid rgba(255,255,255,.25);
   animation: pulse 1.2s infinite;
 }
 @keyframes pulse{
   0%{transform:scale(1);}
+  50%{transform:scale(1.06);}
+  100%{transform:scale(1);}
+}
   50%{transform:scale(1.05);}
   100%{transform:scale(1);}
 }
@@ -422,17 +427,17 @@
 
 
 <style>
-/* === Pack Black Friday : centré + plus vendu doré === */
-#pf-pack-bf{
+/* === Pack Noël : centré + plus vendu doré === */
+#pf-pack-noel{
   border:3px solid #FFD700 !important;
   box-shadow:0 14px 36px rgba(0,0,0,.22) !important;
   background:radial-gradient(circle at top, #FFF7C2 0%, #FFFFFF 55%);
 }
-#pf-pack-bf .pf-ico{
+#pf-pack-noel .pf-ico{
   border-color:#FFD700 !important;
   background:#FFF1A6 !important;
 }
-#pf-pack-bf .pf-price{
+#pf-pack-noel .pf-price{
   background:#FFD700 !important;
 }
 .pf-best-chip{
@@ -450,8 +455,8 @@
   font-size:.75rem;
 }
 @media (min-width: 900px){
-  /* Centre le pack Black Friday sur la grille */
-  .pf-grid #pf-pack-bf{
+  /* Centre le pack Noël sur la grille */
+  .pf-grid #pf-pack-noel{
     grid-column:1 / -1;
     max-width:420px;
     margin:0 auto 10px auto;
@@ -459,15 +464,68 @@
 }
 </style>
 
+
+<style>
+/* ===== Noël effect (neige) ===== */
+#pf-snow{position:fixed;inset:0;pointer-events:none;z-index:55;overflow:hidden}
+.pf-flake{
+  position:absolute; top:-10vh;
+  width:10px; height:10px; border-radius:999px;
+  background:rgba(255,255,255,.9);
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.15));
+  animation: pfFall linear infinite;
+}
+@keyframes pfFall{
+  to{ transform: translateY(120vh) translateX(var(--drift)); }
+}
+</style>
+
+
+<style>
+:root {
+  --christmas-red: #e63946;
+  --christmas-green: #0b6623;
+}
+
+body {
+  background: linear-gradient(180deg, #fff5f5, #ffffff);
+}
+
+header, .cta-button, .pack-highlight {
+  border-color: var(--christmas-red);
+}
+
+.cta-button {
+  background: var(--christmas-red);
+}
+
+.cta-button:hover {
+  background: #a10e19;
+}
+
+.noel-banner {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.4rem;
+  color: var(--christmas-red);
+}
+
+
+</style>
 </head>
+
+
 <body>
+Offre de Noël exclusive – ambiance festive garantie !
+</div>
+
 <div id="promo-banner">
   <a href="#services">
     <span class="bf-pill">
-      <span>-50% BLACK FRIDAY</span>
+      <span>🎄 PACK NOËL</span>
     </span>
     <span>
-      Plusieurs produits sont à <strong>-50% pendant 2 semaines</strong> – Retrouvez le Pack Black Friday avec tous les produits du site !
+      Offre <strong>Noël exclusive pendant 24h</strong> : un pack avec <strong>tous les produits</strong> du site à <strong>24,99€</strong> (au lieu de 119,99€).
     </span>
   </a>
 </div>
@@ -493,7 +551,7 @@
           Paiement sécurisé via Stripe &amp; téléchargement immédiat.</p>
 <div style="margin-top:16px">
 <a class="cta" href="#services">Voir nos services</a>
-        <a href="#services" class="blackfriday-btn">🔥 Offre Black Friday</a>
+        <a href="#services" class="blackfriday-btn">🎄 Pack Noël (24h)</a>
 </div>
 <div aria-hidden="true" class="scene">
 <div class="car">
@@ -550,20 +608,21 @@
 </section>
 <!-- Services / Produits -->
 <section aria-labelledby="titre-services" id="services"><h2 class="section-title" id="titre-services">Nos offres</h2>
-<div class="pf-grid"><article class="pf-card" id="pf-pack-bf">
-<span class="pf-chip pf-best-chip"><i class="fa-solid fa-crown"></i> Plus vendu</span>
-<div class="pf-head">
-<div class="pf-ico"><i class="fa-solid fa-fire"></i></div>
-<h3 class="pf-title">Pack Black Friday</h3>
-</div>
-<ul class="pf-list">
-<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Inclut la synthèse Express  (10 pages)</span></li>
-<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Inclut la synthèse Permis B (en profondeur)</span></li>
-<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Inclut le pack audio 20 minutes + fiches offertes</span></li>
-<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Téléchargement instantané &amp; accès illimité</span></li>
-</ul>
-<div class="pf-price"><span class="old">119,99€</span><span>49,99€</span></div>
-<a class="pf-btn" href="https://buy.stripe.com/8x27sL8BzdFS9Qz87l7Zu0d" id="btn-pack-bf"><i class="fa-solid fa-lock"></i> Acheter le pack Black Friday</a>
+<div class="pf-grid"><article class="pf-card" id="pf-pack-noel">
+  <span class="pf-chip pf-best-chip"><i class="fa-solid fa-gift"></i> Offre 24h</span>
+  <div class="pf-head">
+    <div class="pf-ico"><i class="fa-solid fa-tree"></i></div>
+    <h3 class="pf-title">Pack Noël (tous les produits)</h3>
+  </div>
+  <ul class="pf-list">
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Synthèse Express (10 pages)</span></li>
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Synthèse Permis B (30 pages)</span></li>
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Pack Audio 20 minutes + fiches offertes</span></li>
+    <li><span class="pf-tick"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Téléchargement instantané & accès illimité</span></li>
+  </ul>
+  <div class="pf-price"><span class="old">119,99€</span><span>24,99€</span></div>
+  <a class="pf-btn" href="https://buy.stripe.com/5kQ14nbNL1Xa1k373h7Zu0g" id="btn-pack-noel"><i class="fa-solid fa-lock"></i> Acheter le Pack Noël</a>
+  <div class="pf-note"><span class="bolt">⏳</span><span>Disponible 24h seulement</span></div>
 </article><article class="pf-card" id="pf-audio">
 <div class="pf-head">
 <div class="pf-ico"><i class="fa-solid fa-headphones"></i></div>
@@ -603,18 +662,6 @@
 </ul>
 <div class="pf-price"><span class="old">39,99€</span><span>19,99€</span></div>
 <a class="pf-btn" href="https://buy.stripe.com/8x26oH053eJWe6P5Zd7Zu0f" id="btn-permisb"><i class="fa-solid fa-lock"></i> Acheter la synthèse</a>
-</article><article class="pf-card" id="pf-pack">
-<div class="pf-head">
-<div class="pf-ico"><i class="fa-solid fa-gears"></i></div>
-<h3 class="pf-title">Pack 2 Synthèses (Express + B)</h3>
-</div>
-<ul class="pf-list">
-<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>10 pages Express + 30 pages Permis B</span></li>
-<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Fautes éliminatoires bien signalées</span></li>
-<li><span class="pf-tick"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="#16a34a" r="11"></circle><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"></path></svg></span><span>Téléchargement instantané — accès illimité</span></li>
-</ul>
-<div class="pf-price"><span class="old">39,99€</span><span>24,99€</span></div>
-<a class="pf-btn" href="https://buy.stripe.com/4gM28rdVT9pCd2LgDR7Zu0e" id="btn-pack-20"><i class="fa-solid fa-lock"></i> Acheter le pack</a>
 </article></div>
 
 
@@ -770,5 +817,34 @@
     });
   })();
 </script>
+
+<script>
+/* Neige légère (désactivée si "réduire les animations") */
+(function(){
+  try{
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce) return;
+    var wrap = document.createElement('div');
+    wrap.id = 'pf-snow';
+    document.body.appendChild(wrap);
+
+    var n = 34;
+    for(var i=0;i<n;i++){
+      var flake = document.createElement('span');
+      flake.className = 'pf-flake';
+      var size = 3 + Math.random()*6;
+      flake.style.width = size + 'px';
+      flake.style.height = size + 'px';
+      flake.style.left = (Math.random()*100) + 'vw';
+      flake.style.opacity = (0.35 + Math.random()*0.65).toFixed(2);
+      flake.style.animationDuration = (6 + Math.random()*10).toFixed(2) + 's';
+      flake.style.animationDelay = (-Math.random()*12).toFixed(2) + 's';
+      flake.style.setProperty('--drift', ((Math.random()*60)-30).toFixed(0) + 'px');
+      wrap.appendChild(flake);
+    }
+  }catch(e){}
+})();
+</script>
+
 </body>
 </body></html>
